@@ -1,0 +1,35 @@
+.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background: #fff;
+  color: #fff;
+}
+
+.ant-layout-header .logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+  width: 200px;
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+.ant-layout-header ul {
+}
+
+.ant-layout-header ul li.ant-menu-item-selected::after,
+.ant-layout-header ul li.ant-menu-item-active::after,
+.ant-layout-header ul li.ant-menu-overflow-item::after {
+  border-bottom-width: 0px !important;
+  border-bottom-color: #fff !important;
+}
+
+.ant-layout-header ul li.ant-menu-item-active {
+  color: red !important;
+}
+
+.ant-layout-header ul li span {
+  text-transform: uppercase;
+}
