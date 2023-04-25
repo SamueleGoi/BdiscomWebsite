@@ -1,11 +1,84 @@
+:root {
+  --bg-color-light: #fff;
+  --bg-color-dark: #000;
+
+  /* button*/
+  --button-color-primary: #2d56a0;
+  --button-color-dark: #ddd;
+
+  /* content */
+  --color-primary: #2d56a0;
+  --color-dark: #000;
+}
+
+@font-face {
+  font-family: GT-America-Black;
+  src: url("./resources/font/GT-America-Compressed-Black-Trial.otf");
+}
+@font-face {
+  font-family: GT-America-Bold;
+  src: url("./resources/font/GT-America-Compressed-Bold-Trial.otf");
+}
+@font-face {
+  font-family: GT-America-Medium;
+  src: url("./resources/font/GT-America-Compressed-Medium-Trial.otf");
+}
+@font-face {
+  font-family: GT-America-Regular;
+  src: url("./resources/font/GT-America-Compressed-Regular-Trial.otf");
+}
+@font-face {
+  font-family: GT-America-Light;
+  src: url("./resources/font/GT-America-Compressed-Light-Trial.otf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* layout site*/
-.site-layout-content {
-  min-height: 100vh;
-  padding: 16px 50px;
+/** BASICS **/
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: GT-America-Bold;
+  font-size: 1.2em;
+}
+
+p,
+pre,
+span,
+div {
+  font-family: GT-America-Light;
+  font-size: 1.2em;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+/** HEADER MENU**/
+.ant-layout-header ul li span {
+  font-family: GT-America-Bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
+/** VARIOUS SECTION **/
+
+.section-content__text {
+  padding: 50px;
+  min-height: 400px;
 }

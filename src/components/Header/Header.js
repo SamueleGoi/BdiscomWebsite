@@ -13,26 +13,26 @@ import LogoBdiscom from "../../resources/logo/Bdiscom_srl.png";
 import "./Header.css";
 
 const Header = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const items1 = ["home", "about"].map((key) => ({
+  const items1 = ["about", "products", "contact", "login"].map((key) => ({
     key,
     label: key,
     onClick: () => {
       console.log("key", key);
-      // navigate("/about");
+      // navigate(`/${key}`);
     },
+    className: `menu-${key}`,
   }));
 
   return (
-    <HeaderComponent className="header">
+    // <section className="header">
+    <HeaderComponent>
       <div className="logo">
-        <Image
-          src={LogoBdiscom}
-          alt="BDISCOM"
-          preview={false}
+        <div
+          className="logo__image"
           onClick={() => {
-            console.log("naviga");
+            // navigate("/");
           }}
         />
       </div>
@@ -42,7 +42,9 @@ const Header = () => {
         defaultSelectedKeys={["home"]}
         items={items1}
       />
+      {/* <div className="login" /> */}
     </HeaderComponent>
+    // </section>
   );
 };
 

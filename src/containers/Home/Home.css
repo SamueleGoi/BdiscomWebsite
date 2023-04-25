@@ -1,0 +1,25 @@
+.hero__image__background {
+  background-image: url("../../resources/image/bg-header-plasma.jpg");
+  min-height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 !important;
+}
+
+.first-section_row {
+  padding: 0 100px !important;
+}
+
+.first-section__column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.first-section__column h1 {
+  font-size: 3em;
+}
+.first-section__column p {
+  margin: 1em;
+  font-size: 1.7em;
+}

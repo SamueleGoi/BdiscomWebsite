@@ -22,22 +22,21 @@ import "./App.css";
 
 function App() {
   return (
-    <Layout>
-      <Content className="site-layout-content">
-        <BrowserRouter>
-          <Routes>
-            <Route path="*" element={<Header />} />
-            <Route path="/" element={<Home />} errorElement={ErrorPage404} />
-            <Route
-              path="/about"
-              element={<About />}
-              errorElement={ErrorPage404}
-            />
-          </Routes>
-        </BrowserRouter>
-      </Content>
-      <Footer />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Header />
+        <Content className="site-layout">
+          <div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<ErrorPage404 />} />
+            </Routes>
+          </div>
+        </Content>
+        <Footer />
+      </Layout>
+    </BrowserRouter>
   );
 }
 

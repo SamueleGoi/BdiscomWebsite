@@ -30,10 +30,11 @@ import Layout, { Content } from "antd/es/layout/layout";
 // css
 import "./index.css";
 
-// const router = createBrowserRouter([
-//   { path: "/", element: <Home />, errorElement: <ErrorPage404 /> },
-//   { path: "/about", element: <About />, errorElement: <ErrorPage404 /> },
-// ]);
+const router = createBrowserRouter([
+  { Component: <Header /> },
+  { path: "/", element: <Home />, errorElement: <ErrorPage404 /> },
+  { path: "/about", element: <About />, errorElement: <ErrorPage404 /> },
+]);
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -48,6 +49,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
+    {/* <RouterProvider router={router} /> */}
   </React.StrictMode>
 );
 

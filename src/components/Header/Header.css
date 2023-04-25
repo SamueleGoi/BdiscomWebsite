@@ -5,18 +5,39 @@
   width: 100%;
   background: #fff;
   color: #fff;
+  height: fit-content;
+  line-height: 80px;
 }
 
-.ant-layout-header .logo {
+.logo {
+  float: left;
+  cursor: pointer;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.logo .logo__image {
+  background-image: url("../../resources/logo/Bdiscom_srl.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 35px;
+}
+
+.login {
+  float: right;
   background-repeat: no-repeat;
   background-size: contain;
-  float: left;
-  width: 200px;
-  margin-right: 2em;
   cursor: pointer;
+  width: 50px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background-color: #000;
 }
 
-.ant-layout-header ul {
+.ant-layout-header ul.ant-menu-overflow {
 }
 
 .ant-layout-header ul li.ant-menu-item-selected::after,
@@ -27,9 +48,5 @@
 }
 
 .ant-layout-header ul li.ant-menu-item-active {
-  color: red !important;
-}
-
-.ant-layout-header ul li span {
-  text-transform: uppercase;
+  color: var(--color-primary) !important;
 }
