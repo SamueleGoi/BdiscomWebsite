@@ -2,6 +2,9 @@
   --bg-color-light: #fff;
   --bg-color-dark: #000;
 
+  /* header */
+  --header-color-primary: #2d56a0;
+
   /* button*/
   --button-color-primary: #2d56a0;
   --button-color-dark: #ddd;
@@ -10,6 +13,8 @@
   --color-primary: #2d56a0;
   --color-dark: #000;
 }
+
+/*** GT America ***/
 
 @font-face {
   font-family: GT-America-Black;
@@ -32,6 +37,29 @@
   src: url("./resources/font/GT-America-Compressed-Light-Trial.otf");
 }
 
+/*** Mundial ***/
+
+@font-face {
+  font-family: Mundial-Black;
+  src: url("./resources/font/Fontspring-DEMO-7-mundial-black-tty.otf");
+}
+@font-face {
+  font-family: Mundial-Bold;
+  src: url("./resources/font/Fontspring-DEMO-6-mundial-bold-tty.otf");
+}
+@font-face {
+  font-family: Mundial-Medium;
+  src: url("./resources/font/Fontspring-DEMO-5-mundial-demibold-tty.otf");
+}
+@font-face {
+  font-family: Mundial-Regular;
+  src: url("./resources/font/Fontspring-DEMO-4-mundial-regular-tty.otf");
+}
+@font-face {
+  font-family: Mundial-Light;
+  src: url("./resources/font/Fontspring-DEMO-3-mundial-light-tty.otf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,7 +72,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: GT-America-Bold;
+  font-family: Mundial-Bold;
   font-size: 1.2em;
 }
 
@@ -52,8 +80,8 @@ p,
 pre,
 span,
 div {
-  font-family: GT-America-Light;
-  font-size: 1.2em;
+  font-family: Mundial-Light;
+  font-size: 18px;
 }
 
 .text-align-center {
@@ -70,8 +98,8 @@ div {
 
 /** HEADER MENU**/
 .ant-layout-header ul li span {
-  font-family: GT-America-Bold;
-  text-transform: uppercase;
+  font-family: Mundial-Bold;
+  /* text-transform: capitalize; */
   letter-spacing: 2px;
   font-size: 17px;
 }

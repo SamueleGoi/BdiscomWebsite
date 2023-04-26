@@ -1,9 +1,13 @@
 .hero__image__background {
-  background-image: url("../../resources/image/bg-header-plasma.jpg");
+  background-image: url("../../resources/header/pcb.jpg");
   min-height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
 }
 
 .first-section_row {
