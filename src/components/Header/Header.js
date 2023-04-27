@@ -26,6 +26,7 @@ import "./Header.css";
 
 const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);
+  const [headerActive, setHeaderActive] = useState(false);
 
   const { height, width } = useWindowDimensions();
 
@@ -34,8 +35,9 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("height", height);
-  }, [height]);
+    scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
+    scrollPosition >= HEIGHT_POSITION && setHeaderActive(true);
+  }, [scrollPosition]);
 
   const openMegaMenuOrNavigate = (key) => {
     switch (key) {
@@ -59,11 +61,7 @@ const Header = () => {
     key,
     icon: key === "products" && <AngleSmallDown color="#2d56a0" />,
     label:
-      key === "login" ? (
-        <UserIcon fill={scrollPosition > HEIGHT_POSITION && "#2d56a0"} />
-      ) : (
-        key
-      ),
+      key === "login" ? <UserIcon fill={headerActive && "#2d56a0"} /> : key,
     onClick: () => openMegaMenuOrNavigate(key),
     className: key === "login" && "menu-login--transparent",
   }));
@@ -78,11 +76,9 @@ const Header = () => {
       )}
 
       <HeaderComponent
-        className={
-          scrollPosition < HEIGHT_POSITION
-            ? "layout-header"
-            : "layout-header--active"
-        }
+        // onMouseOver={() => setHeaderActive(true)}
+        // onMouseOut={() => setHeaderActive(false)}
+        className={headerActive ? "layout-header--active" : "layout-header"}
       >
         <div className="logo">
           {/* <div
@@ -92,11 +88,7 @@ const Header = () => {
             }}
           /> */}
           <Image
-            src={
-              scrollPosition < HEIGHT_POSITION
-                ? LogoBdiscomWhite
-                : LogoBdiscomPrimary
-            }
+            src={headerActive ? LogoBdiscomPrimary : LogoBdiscomWhite}
             width={200}
             preview={false}
             onClick={() => console.log("navigate")}

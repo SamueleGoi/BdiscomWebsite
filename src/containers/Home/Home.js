@@ -5,7 +5,8 @@ import React from "react";
 import { Row, Col, Image } from "antd";
 
 // image
-import HeroBg from "../../resources/header/pcb.jpg";
+import HeroBgPcb from "../../resources/header/pcb.jpg";
+import HeroBgSpeed from "../../resources/header/speed.jpg";
 
 // css
 import "./Home.css";
@@ -16,7 +17,7 @@ const Home = () => {
     <>
       {/* <section className="hero__image__background" /> */}
       <Image
-        src={HeroBg}
+        src={HeroBgSpeed}
         preview={false}
         height={"80vh"}
         width={"100%"}
