@@ -20,7 +20,7 @@ const Home = () => {
         preview={false}
         height={"80vh"}
         width={"100%"}
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", opacity: ".8" }}
         alt="hero"
       />
       <Row className="section-content__text first-section_row">
