@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { Col, Menu, Row } from "antd";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
-// logo
-import LogoBdiscom from "../../resources/logo/Bdiscom_srl.png";
-
 // icon
 import UserIcon from "../../resources/svg-components/UserIcon";
 import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";

@@ -2,7 +2,10 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 
 // antd
-import { Row, Col } from "antd";
+import { Row, Col, Image } from "antd";
+
+// image
+import HeroBg from "../../resources/header/pcb.jpg";
 
 // css
 import "./Home.css";
@@ -11,7 +14,15 @@ const Home = () => {
   //   const navigate = useNavigate();
   return (
     <>
-      <section className="hero__image__background" />
+      {/* <section className="hero__image__background" /> */}
+      <Image
+        src={HeroBg}
+        preview={false}
+        height={"80vh"}
+        width={"100%"}
+        style={{ objectFit: "cover" }}
+        alt="hero"
+      />
       <Row className="section-content__text first-section_row">
         <Col span={24} className="first-section__column text-align-center">
           <h1>Bdiscom Srl key supplier for plasma generators</h1>
@@ -23,6 +34,7 @@ const Home = () => {
           </p>
         </Col>
       </Row>
+      <Row style={{ height: "100vh" }}></Row>
     </>
   );
 };
