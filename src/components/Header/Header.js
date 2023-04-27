@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // antd
 import { Col, Image, Menu, Row } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
 // hooks
@@ -89,7 +90,7 @@ const Header = () => {
           /> */}
           <Image
             src={headerActive ? LogoBdiscomPrimary : LogoBdiscomWhite}
-            width={200}
+            width={300}
             preview={false}
             onClick={() => console.log("navigate")}
           />
@@ -99,6 +100,7 @@ const Header = () => {
           theme="light"
           mode="horizontal"
           defaultSelectedKeys={["home"]}
+          expandIcon={<MenuOutlined />}
           items={itemMenu}
         />
 

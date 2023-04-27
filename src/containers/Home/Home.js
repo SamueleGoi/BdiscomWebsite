@@ -7,6 +7,7 @@ import { Row, Col, Image } from "antd";
 // image
 import HeroBgPcb from "../../resources/header/pcb.jpg";
 import HeroBgSpeed from "../../resources/header/speed.jpg";
+import HeroBgPcb01 from "../../resources/header/pcb01.jpg";
 
 // css
 import "./Home.css";
@@ -17,11 +18,11 @@ const Home = () => {
     <>
       {/* <section className="hero__image__background" /> */}
       <Image
-        src={HeroBgSpeed}
+        src={HeroBgPcb01}
         preview={false}
         height={"80vh"}
         width={"100%"}
-        style={{ objectFit: "cover", opacity: ".8" }}
+        style={{ objectFit: "cover", opacity: ".8", objectPosition: "left" }}
         alt="hero"
       />
       <Row className="section-content__text first-section_row">
