@@ -1,30 +1,39 @@
 .ant-layout-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 2;
   width: 100%;
-  background: transparent;
   color: var(--bg-color-light);
-  height: fit-content;
-  line-height: 60px;
+  line-height: 120px;
+  height: 120px;
+  padding: 0 15em 0 15em;
+}
+
+.layout-header {
+  background: transparent;
+}
+
+.layout-header--active {
+  background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .logo {
   float: left;
   cursor: pointer;
   vertical-align: middle;
-  display: flex;
-  align-items: center;
-  height: 60px;
 }
 
-.logo .logo__image {
-  background-image: url("../../resources/logo/Bdiscom_srl.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 35px;
+.logo .ant-image {
+  display: flex;
+  height: 100px;
 }
+
+/* .logo .logo__image {
+  background-image: url("../../resources/logo/logo.svg");
+  width: 400px;
+  height: 200px;
+} */
 
 .login {
   float: right;
@@ -41,29 +50,40 @@
   justify-content: flex-end;
   background: transparent;
   border-bottom: transparent;
+  line-height: 120px;
 }
 
-.ant-layout-header ul li.ant-menu-item-selected::after,
-.ant-layout-header ul li.ant-menu-item-active::after,
-.ant-layout-header ul li.ant-menu-overflow-item::after {
-  border-bottom-width: 5px !important;
-}
-
-.menu-login--transparent {
+.menu-login--transparent::after {
   border-bottom-color: transparent !important;
-}
-
-.ant-layout-header ul li.ant-menu-item-active::after {
-  border-bottom-color: var(--bg-color-light) !important;
 }
 
 .ant-layout-header ul li.ant-menu-item-selected::after {
   border-bottom-color: transparent !important;
 }
 
+.ant-layout-header ul li.ant-menu-item-selected::after,
+.ant-layout-header ul li.ant-menu-item-active::after,
+.ant-layout-header ul li.ant-menu-overflow-item::after {
+  border-bottom-width: 5px !important;
+  margin-bottom: 20px;
+}
+
+.ant-layout-header ul li.ant-menu-item-active::after {
+  border-bottom-color: var(--color-light) !important;
+}
+
+.layout-header--active ul li.ant-menu-item-active::after {
+  border-bottom-color: var(--color-primary) !important;
+}
+
 .ant-menu-title-content {
   font-size: 18px !important;
   color: var(--bg-color-light) !important;
+}
+
+.layout-header--active .ant-menu-title-content {
+  font-size: 18px !important;
+  color: var(--color-primary) !important;
 }
 
 .ant-layout-header ul li.ant-menu-item-active {

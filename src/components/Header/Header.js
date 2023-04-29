@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 // antd
-import { Col, Menu, Row } from "antd";
+import { Col, Image, Menu, Row } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
+// hooks
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useScrollPosition from "../../hooks/useScrollPosition";
+
+// constants
+import { HEIGHT_POSITION } from "../../utils/constant";
+
 // logo
-import LogoBdiscom from "../../resources/logo/Bdiscom_srl.png";
+import LogoBdiscomPrimary from "../../resources/logo/logo.svg";
+import LogoBdiscomWhite from "../../resources/logo/logo bianco.svg";
 
 // icon
 import UserIcon from "../../resources/svg-components/UserIcon";
@@ -18,7 +27,18 @@ import "./Header.css";
 
 const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);
+  const [headerActive, setHeaderActive] = useState(false);
+
+  const { height, width } = useWindowDimensions();
+
+  const scrollPosition = useScrollPosition();
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
+    scrollPosition >= HEIGHT_POSITION && setHeaderActive(true);
+  }, [scrollPosition]);
 
   const openMegaMenuOrNavigate = (key) => {
     switch (key) {
@@ -41,7 +61,8 @@ const Header = () => {
   ].map((key) => ({
     key,
     icon: key === "products" && <AngleSmallDown color="#2d56a0" />,
-    label: key === "login" ? <UserIcon /> : key,
+    label:
+      key === "login" ? <UserIcon fill={headerActive && "#2d56a0"} /> : key,
     onClick: () => openMegaMenuOrNavigate(key),
     className: key === "login" && "menu-login--transparent",
   }));
@@ -55,13 +76,23 @@ const Header = () => {
         ></div>
       )}
 
-      <HeaderComponent>
+      <HeaderComponent
+        // onMouseOver={() => setHeaderActive(true)}
+        // onMouseOut={() => setHeaderActive(false)}
+        className={headerActive ? "layout-header--active" : "layout-header"}
+      >
         <div className="logo">
-          <div
+          {/* <div
             className="logo__image"
             onClick={() => {
               // navigate("/");
             }}
+          /> */}
+          <Image
+            src={headerActive ? LogoBdiscomPrimary : LogoBdiscomWhite}
+            width={300}
+            preview={false}
+            onClick={() => console.log("navigate")}
           />
         </div>
 
@@ -69,6 +100,7 @@ const Header = () => {
           theme="light"
           mode="horizontal"
           defaultSelectedKeys={["home"]}
+          expandIcon={<MenuOutlined />}
           items={itemMenu}
         />
 

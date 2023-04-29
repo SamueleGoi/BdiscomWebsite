@@ -1,4 +1,5 @@
 :root {
+  --bg-color-primary: #2d56a0;
   --bg-color-light: #fff;
   --bg-color-dark: #000;
 
@@ -12,6 +13,7 @@
   /* content */
   --color-primary: #2d56a0;
   --color-dark: #000;
+  --color-light: #fff;
 }
 
 /*** GT America ***/
