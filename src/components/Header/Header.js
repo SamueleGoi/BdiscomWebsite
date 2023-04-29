@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // antd
-import { Col, Image, Menu, Row } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import { Button, Col, Image, Menu, Row } from "antd";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
 // hooks
@@ -21,6 +20,7 @@ import LogoBdiscomWhite from "../../resources/logo/logo bianco.svg";
 // icon
 import UserIcon from "../../resources/svg-components/UserIcon";
 import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";
+import MenuBurger from "../../resources/svg-components/MenuBurger";
 
 // css
 import "./Header.css";
@@ -28,12 +28,13 @@ import "./Header.css";
 const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);
   const [headerActive, setHeaderActive] = useState(false);
+  const [openMenuMobile, setOpenMenuMobile] = useState(false);
 
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const scrollPosition = useScrollPosition();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
@@ -50,22 +51,66 @@ const Header = () => {
         break;
     }
   };
-
   const itemMenu = [
     "Who we are",
     "What we do",
     "Products",
     "Contact",
-    "About",
-    "login",
+    "Login",
   ].map((key) => ({
     key,
     icon: key === "products" && <AngleSmallDown color="#2d56a0" />,
     label:
-      key === "login" ? <UserIcon fill={headerActive && "#2d56a0"} /> : key,
-    onClick: () => openMegaMenuOrNavigate(key),
-    className: key === "login" && "menu-login--transparent",
+      key === "Login" ? (
+        <Button
+          type="ghost"
+          className={headerActive && "ant-btn-ghost--active"}
+        >
+          {key}
+        </Button>
+      ) : (
+        key
+      ),
+    // onClick: () => openMegaMenuOrNavigate(key),
+    className: key === "Login" && "menu-login menu-login--transparent",
   }));
+
+  const widthLogoIcon = (width) => {
+    let logoWidth = 0;
+    switch (true) {
+      case width >= 1400:
+        logoWidth = 300;
+        return logoWidth;
+      case width >= 767:
+        logoWidth = 200;
+        return logoWidth;
+      case width < 767:
+        logoWidth = 170;
+        return logoWidth;
+      default:
+        break;
+    }
+    return logoWidth;
+  };
+
+  const switchPaddingMenu = (width) => {
+    let paddingMenu = {};
+    switch (true) {
+      case width >= 1600:
+        paddingMenu = { padding: "0 15em 0 15em" };
+        return paddingMenu;
+      case width < 1600 && width >= 1500:
+        paddingMenu = { padding: "0 10em 0 10em" };
+        return paddingMenu;
+      case width < 1500 && width >= 1400:
+        paddingMenu = { padding: "0 5em 0 5em" };
+        return paddingMenu;
+      case width < 1400:
+        paddingMenu = { padding: "0 10px 0 10px" };
+        return paddingMenu;
+    }
+    return paddingMenu;
+  };
 
   return (
     <>
@@ -79,53 +124,40 @@ const Header = () => {
       <HeaderComponent
         // onMouseOver={() => setHeaderActive(true)}
         // onMouseOut={() => setHeaderActive(false)}
+        style={switchPaddingMenu(width)}
         className={headerActive ? "layout-header--active" : "layout-header"}
       >
         <div className="logo">
-          {/* <div
-            className="logo__image"
-            onClick={() => {
-              // navigate("/");
-            }}
-          /> */}
           <Image
             src={headerActive ? LogoBdiscomPrimary : LogoBdiscomWhite}
-            width={300}
+            width={widthLogoIcon(width)}
             preview={false}
             onClick={() => console.log("navigate")}
           />
         </div>
 
         <Menu
+          style={width < 1400 ? { display: "none" } : { display: "flex" }}
           theme="light"
           mode="horizontal"
           defaultSelectedKeys={["home"]}
-          expandIcon={<MenuOutlined />}
+          expandIcon={false}
           items={itemMenu}
         />
 
-        {/* <Menu
-          theme="light"
-          mode="horizontal"
-          style={{ justifyContent: "space-between" }}
-        >
-          <Menu.ItemGroup className="menu__left">
-            {leftMenu.map((ele) => (
-              <Menu.Item key={ele.key} onClick={ele.onClick}>
-                {ele.label}
-              </Menu.Item>
-            ))}
-          </Menu.ItemGroup>
-          <Menu.ItemGroup className="menu__right">
-            {loginMenu.map((ele) => (
-              <Menu.Item key={ele.key} onClick={ele.onClick} icon={ele.icon}>
-                {ele.label}
-              </Menu.Item>
-            ))}
-          </Menu.ItemGroup>
-        </Menu> */}
+        {width < 1400 && (
+          <div className="mobile-burger-menu">
+            <MenuBurger
+              fill={headerActive && "var(--color-primary)"}
+              onClick={() => {
+                console.log("open menu mobile ");
+                setOpenMenuMobile(true);
+              }}
+            />
+          </div>
+        )}
       </HeaderComponent>
-      {openSubMenu && (
+      {/* {openSubMenu && (
         <Row className="mega-menu mega-menu--active">
           <Col span={6}></Col>
           <Col span={12}>
@@ -135,7 +167,7 @@ const Header = () => {
             <h1>X</h1>
           </Col>
         </Row>
-      )}
+      )} */}
     </>
   );
 };

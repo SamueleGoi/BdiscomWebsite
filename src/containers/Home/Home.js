@@ -2,7 +2,7 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 
 // antd
-import { Row, Col, Image } from "antd";
+import { Row, Col, Image, Button } from "antd";
 
 // image
 import HeroBgPcb from "../../resources/header/pcb.jpg";
@@ -25,7 +25,7 @@ const Home = () => {
         style={{ objectFit: "cover", opacity: ".8", objectPosition: "left" }}
         alt="hero"
       />
-      <Row className="section-content__text first-section_row">
+      <Row className="section-content__small first-section_row">
         <Col span={24} className="first-section__column text-align-center">
           <h1>Bdiscom Srl key supplier for plasma generators</h1>
           <p>
@@ -34,6 +34,28 @@ const Home = () => {
             plasma applications to be used in both R/D and industrial
             production.
           </p>
+        </Col>
+      </Row>
+      <Row
+      // className="section-content__small"
+      >
+        <Col span={12} className="d-flex align-items-center">
+          <Row>
+            <h1>Title</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam,
+              perferendis iure? Obcaecati inventore deserunt sequi fuga mollitia
+              voluptates, dolorem sint sapiente doloremque tempora dolores
+              cupiditate doloribus voluptatum aliquid corporis fugiat.
+            </p>
+            <Button type="primary">Learn more</Button>
+          </Row>
+        </Col>
+        <Col
+          span={12}
+          // className="d-flex align-items-center"
+        >
+          <Image src={HeroBgSpeed} preview={false} />
         </Col>
       </Row>
       <Row style={{ height: "100vh" }}></Row>

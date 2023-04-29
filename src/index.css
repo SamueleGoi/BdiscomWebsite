@@ -8,7 +8,8 @@
 
   /* button*/
   --button-color-primary: #2d56a0;
-  --button-color-dark: #ddd;
+  --button-color-dark: #000;
+  --button-color-light: #fff;
 
   /* content */
   --color-primary: #2d56a0;
@@ -74,7 +75,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Mundial-Bold;
+  font-family: Mundial-Bold !important;
   font-size: 1.2em;
 }
 
@@ -82,8 +83,53 @@ p,
 pre,
 span,
 div {
-  font-family: Mundial-Light;
-  font-size: 18px;
+  font-family: Mundial-Light !important;
+  font-size: 18px !important;
+}
+
+/*** BUTTTON ***/
+
+.ant-btn {
+  height: 40px;
+  padding: 4px 24px;
+}
+
+.ant-btn span {
+  font-family: Mundial-Bold !important;
+  font-size: 16px !important;
+}
+
+.ant-btn-primary {
+  background-color: var(--button-color-primary);
+}
+
+.ant-btn-ghost {
+  border: 3px solid var(--button-color-light);
+  border-radius: 2em;
+  color: var(--color-light);
+}
+
+.ant-btn-ghost--active {
+  border: 3px solid var(--button-color-primary);
+  border-radius: 2em;
+  color: var(--color-primary);
+}
+
+/** ALIGN **/
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .text-align-center {
@@ -99,6 +145,7 @@ div {
 }
 
 /** HEADER MENU**/
+
 .ant-layout-header ul li span {
   font-family: Mundial-Bold;
   /* text-transform: capitalize; */
@@ -108,7 +155,17 @@ div {
 
 /** VARIOUS SECTION **/
 
-.section-content__text {
+.section-content__large {
+  padding: 50px;
+  min-height: 800px;
+}
+
+.section-content__medium {
+  padding: 50px;
+  min-height: 600px;
+}
+
+.section-content__small {
   padding: 50px;
   min-height: 400px;
 }
