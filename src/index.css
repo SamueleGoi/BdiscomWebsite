@@ -100,7 +100,7 @@ div {
 }
 
 .ant-btn-primary {
-  background-color: var(--button-color-primary);
+  box-shadow: none;
 }
 
 .ant-btn-ghost {
@@ -115,7 +115,13 @@ div {
   color: var(--color-primary);
 }
 
+/** PADDING OR MARGIN **/
+.pt-150 {
+  padding-top: 150px;
+}
+
 /** ALIGN **/
+
 .d-flex {
   display: flex;
 }

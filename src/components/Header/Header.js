@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // antd
 import { Button, Col, Image, Menu, Row } from "antd";
@@ -29,17 +29,14 @@ const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);
   const [headerActive, setHeaderActive] = useState(false);
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
+  // const [pathname, setPathname] = useState("");
 
   const { width } = useWindowDimensions();
 
   const scrollPosition = useScrollPosition();
 
-  // const navigate = useNavigate();
-
-  useEffect(() => {
-    scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
-    scrollPosition >= HEIGHT_POSITION && setHeaderActive(true);
-  }, [scrollPosition]);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const openMegaMenuOrNavigate = (key) => {
     switch (key) {
@@ -51,28 +48,40 @@ const Header = () => {
         break;
     }
   };
+
+  const clickToNavigate = (element) => {
+    switch (element.key) {
+      case "Who we are":
+        return navigate("/about");
+      case "Login":
+        return navigate("/account/login");
+      default:
+        break;
+    }
+  };
+
   const itemMenu = [
     "Who we are",
     "What we do",
     "Products",
     "Contact",
     "Login",
-  ].map((key) => ({
-    key,
-    icon: key === "products" && <AngleSmallDown color="#2d56a0" />,
+  ].map((element) => ({
+    key: element,
+    // icon: element === "Products" && <AngleSmallDown color="#2d56a0" />,
     label:
-      key === "Login" ? (
+      element === "Login" ? (
         <Button
           type="ghost"
           className={headerActive && "ant-btn-ghost--active"}
         >
-          {key}
+          {element}
         </Button>
       ) : (
-        key
+        element
       ),
-    // onClick: () => openMegaMenuOrNavigate(key),
-    className: key === "Login" && "menu-login menu-login--transparent",
+    onClick: (element) => clickToNavigate(element),
+    className: element === "Login" && "menu-login menu-login--transparent",
   }));
 
   const widthLogoIcon = (width) => {
@@ -97,20 +106,29 @@ const Header = () => {
     let paddingMenu = {};
     switch (true) {
       case width >= 1600:
-        paddingMenu = { padding: "0 15em 0 15em" };
+        paddingMenu = "0 15em 0 15em";
         return paddingMenu;
       case width < 1600 && width >= 1500:
-        paddingMenu = { padding: "0 10em 0 10em" };
+        paddingMenu = "0 10em 0 10em";
         return paddingMenu;
       case width < 1500 && width >= 1400:
-        paddingMenu = { padding: "0 5em 0 5em" };
+        paddingMenu = "0 5em 0 5em";
         return paddingMenu;
       case width < 1400:
-        paddingMenu = { padding: "0 10px 0 10px" };
+        paddingMenu = "0 10px 0 10px";
         return paddingMenu;
     }
     return paddingMenu;
   };
+
+  // useEffect(() => {
+  //   setPathname(location.pathname);
+  // }, [location]);
+
+  useEffect(() => {
+    scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
+    scrollPosition >= HEIGHT_POSITION && setHeaderActive(true);
+  }, [scrollPosition]);
 
   return (
     <>
@@ -124,15 +142,23 @@ const Header = () => {
       <HeaderComponent
         // onMouseOver={() => setHeaderActive(true)}
         // onMouseOut={() => setHeaderActive(false)}
-        style={switchPaddingMenu(width)}
-        className={headerActive ? "layout-header--active" : "layout-header"}
+        style={{ padding: switchPaddingMenu(width) }}
+        className={`${
+          headerActive || location.pathname !== "/"
+            ? "layout-header--active"
+            : "layout-header"
+        }`}
       >
         <div className="logo">
           <Image
-            src={headerActive ? LogoBdiscomPrimary : LogoBdiscomWhite}
+            src={
+              headerActive || location.pathname !== "/"
+                ? LogoBdiscomPrimary
+                : LogoBdiscomWhite
+            }
             width={widthLogoIcon(width)}
             preview={false}
-            onClick={() => console.log("navigate")}
+            onClick={() => navigate("/")}
           />
         </div>
 

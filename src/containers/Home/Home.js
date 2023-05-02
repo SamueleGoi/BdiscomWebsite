@@ -17,14 +17,19 @@ const Home = () => {
   return (
     <>
       {/* <section className="hero__image__background" /> */}
-      <Image
+      {/* <Image
         src={HeroBgPcb01}
         preview={false}
         height={"80vh"}
         width={"100%"}
         style={{ objectFit: "cover", opacity: ".8", objectPosition: "left" }}
         alt="hero"
-      />
+      /> */}
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1>We power the future</h1>
+        </div>
+      </div>
       <Row className="section-content__small first-section_row">
         <Col span={24} className="first-section__column text-align-center">
           <h1>Bdiscom Srl key supplier for plasma generators</h1>
@@ -36,11 +41,9 @@ const Home = () => {
           </p>
         </Col>
       </Row>
-      <Row
-      // className="section-content__small"
-      >
+      <Row className="section-content__small">
         <Col span={12} className="d-flex align-items-center">
-          <Row>
+          <div>
             <h1>Title</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam,
@@ -49,7 +52,7 @@ const Home = () => {
               cupiditate doloribus voluptatum aliquid corporis fugiat.
             </p>
             <Button type="primary">Learn more</Button>
-          </Row>
+          </div>
         </Col>
         <Col
           span={12}

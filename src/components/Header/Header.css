@@ -3,10 +3,8 @@
   top: 0;
   z-index: 2;
   width: 100%;
-  color: var(--bg-color-light);
   line-height: 120px;
   height: 120px;
-  /* padding: 0 15em 0 15em; */
 }
 
 .layout-header {
