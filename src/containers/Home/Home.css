@@ -29,18 +29,14 @@
   font-size: 2em;
 }
 
-.hero__image__background {
+/* .hero__image__background {
   object-fit: cover;
   object-position: center;
   background-image: url(../../resources/header/pcb01.jpg);
   width: 100%;
   height: 80vh;
   opacity: 0.8;
-}
-
-.first-section_row {
-  padding: 0 100px !important;
-}
+} */
 
 .first-section__column {
   display: flex;
@@ -54,4 +50,33 @@
 .first-section__column p {
   margin: 1em;
   font-size: 1.7em;
+}
+
+.section-home__about {
+  width: 400px;
+}
+
+.section-home__about h1 {
+  font-size: 2em !important;
+  padding-bottom: 0.5em;
+}
+
+.section-home__about p {
+  font-size: 1em !important;
+  padding-bottom: 2em;
+}
+
+.button-icon__over span {
+  transform: translateX(-10px);
+  transition: all ease 0.3s;
+}
+
+.button-icon__over svg {
+  transition: all ease 0.3s;
+}
+
+.section-home__about button svg {
+  rotate: 270deg;
+  width: 25px;
+  order: 1;
 }

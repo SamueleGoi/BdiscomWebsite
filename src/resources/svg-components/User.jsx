@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserIcon = (props) => {
+const User = (props) => {
   return (
     <svg
       version="1.1"
@@ -9,7 +9,7 @@ const UserIcon = (props) => {
       x="0px"
       y="0px"
       viewBox="0 0 512 512"
-      width="20px"
+      width={props.width ? props.width : "25px"}
       fill={props.fill ? props.fill : "#fff"}
     >
       <style type="text/css"></style>
@@ -28,4 +28,4 @@ const UserIcon = (props) => {
   );
 };
 
-export default UserIcon;
+export default User;

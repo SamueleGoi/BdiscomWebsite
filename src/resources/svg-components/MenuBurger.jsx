@@ -9,7 +9,7 @@ const MenuBurger = (props) => {
       y="0px"
       viewBox="0 0 512 512"
       //   style="enable-background:new 0 0 512 512;"
-      width={20}
+      width={props.width ? props.width : "25px"}
       fill={props.fill ? props.fill : "#fff"}
     >
       <g>

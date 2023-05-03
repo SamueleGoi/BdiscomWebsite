@@ -18,7 +18,7 @@ import LogoBdiscomPrimary from "../../resources/logo/logo.svg";
 import LogoBdiscomWhite from "../../resources/logo/logo bianco.svg";
 
 // icon
-import UserIcon from "../../resources/svg-components/UserIcon";
+import UserIcon from "../../resources/svg-components/User";
 import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";
 import MenuBurger from "../../resources/svg-components/MenuBurger";
 
@@ -73,7 +73,7 @@ const Header = () => {
       element === "Login" ? (
         <Button
           type="ghost"
-          className={headerActive && "ant-btn-ghost--active"}
+          className={`button-login ${headerActive && "button-login--active"}`}
         >
           {element}
         </Button>
