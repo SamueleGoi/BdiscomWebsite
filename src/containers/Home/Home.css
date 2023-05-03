@@ -1,10 +1,9 @@
 /* The hero image */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: url(../../resources/header/pcb01.jpg);
   opacity: 0.8;
 
-  /* Set a specific height */
+  /* Set a specific height and width */
   height: 80vh;
   width: 100%;
 
@@ -15,7 +14,7 @@
   position: relative;
 }
 
-/* Place text in the middle of the image */
+/* Place text in the right of the image */
 .hero-text {
   text-align: center;
   position: absolute;
@@ -29,15 +28,23 @@
   font-size: 2em;
 }
 
-/* .hero__image__background {
-  object-fit: cover;
-  object-position: center;
-  background-image: url(../../resources/header/pcb01.jpg);
-  width: 100%;
-  height: 80vh;
-  opacity: 0.8;
-} */
+/** button icon **/
+.button-icon svg {
+  rotate: 270deg;
+  width: 25px;
+  order: 1;
+}
 
+.button-icon__over span {
+  transform: translateX(-10px);
+  transition: all ease 0.3s;
+}
+
+.button-icon__over svg {
+  transition: all ease 0.3s;
+}
+
+/** first section **/
 .first-section__column {
   display: flex;
   justify-content: center;
@@ -47,13 +54,15 @@
 .first-section__column h1 {
   font-size: 3em;
 }
+
 .first-section__column p {
   margin: 1em;
   font-size: 1.7em;
 }
 
+/** section about **/
 .section-home__about {
-  width: 400px;
+  padding-right: 200px;
 }
 
 .section-home__about h1 {
@@ -66,17 +75,33 @@
   padding-bottom: 2em;
 }
 
-.button-icon__over span {
-  transform: translateX(-10px);
-  transition: all ease 0.3s;
+/** section product **/
+.section-home__product {
+  padding-left: 200px;
 }
 
-.button-icon__over svg {
-  transition: all ease 0.3s;
+.section-home__product h1 {
+  font-size: 2em !important;
+  padding-bottom: 0.5em;
 }
 
-.section-home__about button svg {
-  rotate: 270deg;
-  width: 25px;
-  order: 1;
+.section-home__product p {
+  font-size: 1em !important;
+  padding-bottom: 2em;
+}
+
+/** section name **/
+.section-home__name {
+  /* padding-left: 200px; */
+}
+
+.section-home__name h1 {
+  font-size: 2em !important;
+  padding-bottom: 0.5em;
+}
+
+.section-home__name p {
+  font-family: Mundial-Light;
+  font-size: 1em;
+  padding-bottom: 2em;
 }

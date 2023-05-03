@@ -18,20 +18,12 @@ import { AngleSmallDownIcon } from "../../resources/svg-components";
 import "./Home.css";
 
 const Home = () => {
-  const [iconButtonOver, setIconButtonOver] = useState(false);
+  const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
+  const [secondIconButtonOver, setSecondIconButtonOver] = useState(false);
 
   //   const navigate = useNavigate();
   return (
     <>
-      {/* <section className="hero__image__background" /> */}
-      {/* <Image
-        src={HeroBgPcb01}
-        preview={false}
-        height={"80vh"}
-        width={"100%"}
-        style={{ objectFit: "cover", opacity: ".8", objectPosition: "left" }}
-        alt="hero"
-      /> */}
       <div className="hero-image">
         <div className="hero-text">
           <h1>We power the future</h1>
@@ -48,8 +40,9 @@ const Home = () => {
           </p>
         </Col>
       </Row>
-      <Row className="section-content__medium plr-200">
-        <Col span={12} className="d-flex align-items-end">
+
+      <Row className="section-content__large plr-100">
+        <Col span={10} className="d-flex align-items-start">
           <div className="section-home__about">
             <h1>Title</h1>
             <p>
@@ -60,26 +53,116 @@ const Home = () => {
             </p>
             <CustomButtonPrimary
               type="primary"
-              className={`${
-                iconButtonOver && "button-icon__over"
+              className={`button-icon ${
+                firstIconButtonOver && "button-icon__over"
               } button-primary`}
               onMouseLeave={() => {
-                setIconButtonOver(false);
+                setFirstIconButtonOver(false);
               }}
-              onMouseOver={() => {
-                setIconButtonOver(true);
+              onMouseOver={(ele) => {
+                setFirstIconButtonOver(true);
               }}
-              icon={iconButtonOver && <AngleSmallDownIcon fill="#fff" />}
+              icon={firstIconButtonOver && <AngleSmallDownIcon fill="#fff" />}
             >
               Learn more
             </CustomButtonPrimary>
           </div>
         </Col>
-        <Col
-          span={12}
-          // className="d-flex align-items-center"
-        >
+        <Col span={12}>
           <Image src={HeroBgSpeed} height={"100%"} preview={false} />
+        </Col>
+      </Row>
+
+      <Row className="section-content__large mt-200 plr-100">
+        <Col>
+          <Row>
+            <Col span={12}>
+              <h1 style={{ fontSize: 50 }}>Bdiscom Srl</h1>
+              <h1 style={{ fontSize: 50 }}>
+                key supplier for plasma generators
+              </h1>
+            </Col>
+            <Col span={10} className="">
+              <div className="section-home__name">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
+                  fuga mollitia voluptates, dolorem sint sapiente doloremque
+                  tempora dolores cupiditate doloribus voluptatum aliquid
+                  corporis fugiat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
+                  fuga mollitia voluptates, dolorem sint sapiente doloremque
+                  tempora dolores cupiditate doloribus voluptatum aliquid
+                  corporis fugiat.
+                </p>
+                <CustomButtonPrimary
+                  type="primary"
+                  className={`${
+                    secondIconButtonOver && "button-icon__over"
+                  } button-primary button-icon`}
+                  onMouseLeave={() => {
+                    setSecondIconButtonOver(false);
+                  }}
+                  onMouseOver={() => {
+                    setSecondIconButtonOver(true);
+                  }}
+                  icon={
+                    secondIconButtonOver && <AngleSmallDownIcon fill="#fff" />
+                  }
+                >
+                  Learn more
+                </CustomButtonPrimary>
+              </div>
+            </Col>
+          </Row>
+        </Col>
+        <Col className="mt-50">
+          <Row gutter={40} className="section-content__medium">
+            <Col span={12}>
+              <Image src={HeroBgSpeed} height={"95%"} preview={false} />
+            </Col>
+            <Col span={6} className="d-flex align-items-end">
+              <Image src={HeroBgSpeed} height={300} preview={false} />
+            </Col>
+            <Col span={6} className="d-flex align-items-center">
+              <Image src={HeroBgSpeed} height={300} preview={false} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
+      <Row className="section-content__small mt-200 plr-100">
+        <Col span={14}>
+          <Image src={HeroBgSpeed} height={"100%"} preview={false} />
+        </Col>
+        <Col span={10} className="d-flex text-align-left align-items-end">
+          <div className="section-home__product">
+            <h1>Title</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam,
+              perferendis iure? Obcaecati inventore deserunt sequi fuga mollitia
+              voluptates, dolorem sint sapiente doloremque tempora dolores
+              cupiditate doloribus voluptatum aliquid corporis fugiat.
+            </p>
+            <CustomButtonPrimary
+              type="primary"
+              className={`${
+                secondIconButtonOver && "button-icon__over"
+              } button-primary button-icon`}
+              onMouseLeave={() => {
+                setSecondIconButtonOver(false);
+              }}
+              onMouseOver={() => {
+                setSecondIconButtonOver(true);
+              }}
+              icon={secondIconButtonOver && <AngleSmallDownIcon fill="#fff" />}
+            >
+              Learn more
+            </CustomButtonPrimary>
+          </div>
         </Col>
       </Row>
       <Row style={{ height: "100vh" }}></Row>
