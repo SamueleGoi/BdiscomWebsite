@@ -4,6 +4,8 @@ import React, { useState } from "react";
 // antd
 import { Row, Col, Image, Button } from "antd";
 
+import { CustomButtonPrimary } from "../../CustomLayout";
+
 // image
 import HeroBgPcb from "../../resources/header/pcb.jpg";
 import HeroBgSpeed from "../../resources/header/speed.jpg";
@@ -30,8 +32,8 @@ const Home = () => {
         style={{ objectFit: "cover", opacity: ".8", objectPosition: "left" }}
         alt="hero"
       /> */}
-      <div class="hero-image">
-        <div class="hero-text">
+      <div className="hero-image">
+        <div className="hero-text">
           <h1>We power the future</h1>
         </div>
       </div>
@@ -56,7 +58,7 @@ const Home = () => {
               voluptates, dolorem sint sapiente doloremque tempora dolores
               cupiditate doloribus voluptatum aliquid corporis fugiat.
             </p>
-            <Button
+            <CustomButtonPrimary
               type="primary"
               className={`${
                 iconButtonOver && "button-icon__over"
@@ -70,7 +72,7 @@ const Home = () => {
               icon={iconButtonOver && <AngleSmallDownIcon fill="#fff" />}
             >
               Learn more
-            </Button>
+            </CustomButtonPrimary>
           </div>
         </Col>
         <Col

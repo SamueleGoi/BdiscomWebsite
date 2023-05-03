@@ -6,6 +6,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Col, Image, Menu, Row } from "antd";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
+// custom layout
+import { CustomButtonLogin } from "../../CustomLayout/CustomButton/CustomButton";
+
 // hooks
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import useScrollPosition from "../../hooks/useScrollPosition";
@@ -71,12 +74,12 @@ const Header = () => {
     // icon: element === "Products" && <AngleSmallDown color="#2d56a0" />,
     label:
       element === "Login" ? (
-        <Button
+        <CustomButtonLogin
           type="ghost"
           className={`button-login ${headerActive && "button-login--active"}`}
         >
           {element}
-        </Button>
+        </CustomButtonLogin>
       ) : (
         element
       ),

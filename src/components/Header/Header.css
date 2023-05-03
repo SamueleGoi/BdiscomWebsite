@@ -34,12 +34,6 @@
   vertical-align: middle;
 }
 
-/* .logo .logo__image {
-  background-image: url("../../resources/logo/logo.svg");
-  width: 400px;
-  height: 200px;
-} */
-
 .login {
   float: right;
   background-repeat: no-repeat;
@@ -49,6 +43,13 @@
   height: 31px;
   margin: 16px 24px 16px 0;
   background-color: #000;
+}
+
+.ant-layout-header ul li span {
+  font-family: Mundial-Bold;
+  /* text-transform: capitalize; */
+  letter-spacing: 2px;
+  font-size: 17px;
 }
 
 .ant-layout-header ul.ant-menu-overflow {

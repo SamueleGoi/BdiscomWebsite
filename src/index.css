@@ -87,45 +87,6 @@ div {
   font-size: 18px;
 }
 
-/*** BUTTTON ***/
-
-.ant-btn {
-  padding: 4px 24px;
-}
-
-.button-primary {
-  height: 50px;
-  width: 200px;
-  box-shadow: none;
-  display: inline-flex;
-  align-items: center;
-  font-size: 14px;
-  justify-content: center;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-}
-
-.button-primary span {
-  font-family: Mundial-Regular !important;
-}
-
-.button-login {
-  height: auto;
-  border: 3px solid var(--button-color-light);
-  border-radius: 2em;
-  color: var(--color-light);
-}
-
-.button-login--active {
-  border: 3px solid var(--button-color-primary);
-  border-radius: 2em;
-  color: var(--color-primary);
-}
-
-.button-login span {
-  font-family: Mundial-Bold !important;
-}
-
 /** PADDING OR MARGIN **/
 .pt-150 {
   padding-top: 150px;
@@ -167,15 +128,6 @@ div {
 
 .text-align-right {
   text-align: right;
-}
-
-/** HEADER MENU**/
-
-.ant-layout-header ul li span {
-  font-family: Mundial-Bold;
-  /* text-transform: capitalize; */
-  letter-spacing: 2px;
-  font-size: 17px;
 }
 
 /** VARIOUS SECTION **/
