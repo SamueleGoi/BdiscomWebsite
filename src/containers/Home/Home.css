@@ -1,7 +1,7 @@
 /* The hero image */
 .hero-image {
   background-image: url(../../resources/header/pcb01.jpg);
-  opacity: 0.8;
+  /* opacity: 0.8; */
 
   /* Set a specific height and width */
   height: 80vh;
@@ -14,18 +14,69 @@
   position: relative;
 }
 
-/* Place text in the right of the image */
-.hero-text {
-  text-align: center;
+/* MOBILE */
+.hero-text__mobile {
   position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-40%, -60%);
+  /* top: 50%;
+  left: 45%;
+  transform: translate(-40%, -60%); */
   color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.hero-text h1 {
+.hero-text__mobile .hero-text__first-title,
+.hero-text__mobile .hero-text__second-title {
+  text-align: center;
+  text-transform: uppercase;
   font-size: 2em;
+}
+
+/* DESKTOP */
+.hero-text__desktop {
+  /* min-width: 550px; */
+  width: 600px;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  color: var(--color-light);
+}
+
+.hero-text__desktop .hero-text__first-title,
+.hero-text__desktop .hero-text__second-title {
+  text-transform: uppercase;
+  font-size: 4em;
+}
+
+.hero-text__desktop .hero-text__first-title {
+  text-align: right;
+  animation: translate_first_title 2s;
+}
+
+.hero-text__desktop .hero-text__second-title {
+  text-align: left;
+  animation: translate_second_title 2s;
+}
+
+@keyframes translate_first_title {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes translate_second_title {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 /** button icon **/
@@ -61,9 +112,6 @@
 }
 
 /** section about **/
-.section-home__about {
-  padding-right: 200px;
-}
 
 .section-home__about h1 {
   font-size: 2em !important;
@@ -76,9 +124,6 @@
 }
 
 /** section product **/
-.section-home__product {
-  padding-left: 200px;
-}
 
 .section-home__product h1 {
   font-size: 2em !important;

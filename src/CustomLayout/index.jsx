@@ -1,3 +1,6 @@
-import { CustomButtonPrimary } from "./CustomButton/CustomButton";
+import {
+  CustomButtonPrimary,
+  CustomButtonLogin,
+} from "./CustomButton/CustomButton";
 
-export { CustomButtonPrimary };
+export { CustomButtonPrimary, CustomButtonLogin };

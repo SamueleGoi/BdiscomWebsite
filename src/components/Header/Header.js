@@ -7,7 +7,7 @@ import { Button, Col, Image, Menu, Row } from "antd";
 import { Header as HeaderComponent } from "antd/es/layout/layout";
 
 // custom layout
-import { CustomButtonLogin } from "../../CustomLayout/CustomButton/CustomButton";
+import { CustomButtonLogin } from "../../CustomLayout";
 
 // hooks
 import useWindowDimensions from "../../hooks/useWindowDimensions";

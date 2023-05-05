@@ -16,19 +16,30 @@ import { AngleSmallDownIcon } from "../../resources/svg-components";
 
 // css
 import "./Home.css";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Home = () => {
   const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
   const [secondIconButtonOver, setSecondIconButtonOver] = useState(false);
 
+  const { width, height } = useWindowDimensions();
+
   //   const navigate = useNavigate();
   return (
     <>
       <div className="hero-image">
-        <div className="hero-text">
-          <h1>We power the future</h1>
+        <div
+          className={width >= 992 ? "hero-text__desktop" : "hero-text__mobile"}
+        >
+          <div className="hero-text__first-title">
+            <h1>We power</h1>
+          </div>
+          <div className="hero-text__second-title">
+            <h1>the future</h1>
+          </div>
         </div>
       </div>
+
       <Row className="section-content__small plr-200 first-section_row">
         <Col span={24} className="first-section__column text-align-center">
           <h1>Bdiscom Srl key supplier for plasma generators</h1>
@@ -42,8 +53,14 @@ const Home = () => {
       </Row>
 
       <Row className="section-content__large plr-100">
-        <Col span={10} className="d-flex align-items-start">
-          <div className="section-home__about">
+        <Col
+          xs={24}
+          sm={24}
+          lg={10}
+          xl={10}
+          className="d-flex align-items-start"
+        >
+          <div className={`${width >= 992 && "pr-200"} section-home__about`}>
             <h1>Title</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam,
@@ -68,7 +85,7 @@ const Home = () => {
             </CustomButtonPrimary>
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={24} lg={12} xl={12}>
           <Image src={HeroBgSpeed} height={"100%"} preview={false} />
         </Col>
       </Row>
@@ -76,13 +93,15 @@ const Home = () => {
       <Row className="section-content__large mt-200 plr-100">
         <Col>
           <Row>
-            <Col span={12}>
-              <h1 style={{ fontSize: 50 }}>Bdiscom Srl</h1>
-              <h1 style={{ fontSize: 50 }}>
+            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+              <h1 style={width >= 992 ? { fontSize: 50 } : { fontSize: 30 }}>
+                Bdiscom Srl
+              </h1>
+              <h1 style={width >= 992 ? { fontSize: 50 } : { fontSize: 30 }}>
                 key supplier for plasma generators
               </h1>
             </Col>
-            <Col span={10} className="">
+            <Col xs={24} sm={24} md={24} lg={10} xl={10} className="">
               <div className="section-home__name">
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -121,13 +140,27 @@ const Home = () => {
         </Col>
         <Col className="mt-50">
           <Row gutter={40} className="section-content__medium">
-            <Col span={12}>
+            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
               <Image src={HeroBgSpeed} height={"95%"} preview={false} />
             </Col>
-            <Col span={6} className="d-flex align-items-end">
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={6}
+              xl={6}
+              className="d-flex align-items-end"
+            >
               <Image src={HeroBgSpeed} height={300} preview={false} />
             </Col>
-            <Col span={6} className="d-flex align-items-center">
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={6}
+              xl={6}
+              className="d-flex align-items-center"
+            >
               <Image src={HeroBgSpeed} height={300} preview={false} />
             </Col>
           </Row>
@@ -135,11 +168,18 @@ const Home = () => {
       </Row>
 
       <Row className="section-content__small mt-200 plr-100">
-        <Col span={14}>
+        <Col span={14} xs={24} sm={24} md={24} lg={14} xl={14}>
           <Image src={HeroBgSpeed} height={"100%"} preview={false} />
         </Col>
-        <Col span={10} className="d-flex text-align-left align-items-end">
-          <div className="section-home__product">
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={10}
+          xl={10}
+          className="d-flex text-align-left align-items-end"
+        >
+          <div className={`${width >= 992 && "pl-200"} section-home__product`}>
             <h1>Title</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam,
