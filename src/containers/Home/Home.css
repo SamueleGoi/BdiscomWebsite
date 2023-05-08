@@ -111,6 +111,16 @@
   font-size: 1.7em;
 }
 
+@media screen and (max-width: 992px) {
+  .first-section__column h1 {
+    font-size: 36px;
+  }
+
+  .first-section__column p {
+    font-size: 18px;
+  }
+}
+
 /** section about **/
 
 .section-home__about h1 {

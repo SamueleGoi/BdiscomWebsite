@@ -108,6 +108,33 @@ div {
   padding-top: 150px;
 }
 
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 992px) {
+  .ptb-100 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.ptb-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.plr-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.plr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .plr-100 {
   padding-left: 100px;
   padding-right: 100px;
@@ -126,13 +153,13 @@ div {
   padding-left: 200px;
 }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   .plr-100,
   .plr-200 {
     padding-left: 10px;
     padding-right: 10px;
   }
-}
+} */
 
 /** ALIGN **/
 

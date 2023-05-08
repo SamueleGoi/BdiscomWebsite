@@ -165,18 +165,15 @@ const Header = () => {
           />
         </div>
 
-        <Menu
-          style={width < 1400 ? { display: "none" } : { display: "flex" }}
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["home"]}
-          expandIcon={false}
-          items={itemMenu}
-        />
+        {width >= 1400 && (
+          <Menu theme="light" mode="horizontal" items={itemMenu} />
+        )}
 
         {width < 1400 && (
           <div className="mobile-burger-menu">
+            {/* <UserIcon /> */}
             <MenuBurger
+              style={{ cursor: "pointer" }}
               fill={headerActive && "var(--color-primary)"}
               onClick={() => {
                 console.log("open menu mobile ");
@@ -184,6 +181,10 @@ const Header = () => {
               }}
             />
           </div>
+        )}
+
+        {width < 1400 && openMenuMobile && (
+          <Menu theme="light" mode="inline" items={itemMenu} />
         )}
       </HeaderComponent>
       {/* {openSubMenu && (
