@@ -3,8 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // antd
-import { Button, Col, Image, Menu, Row } from "antd";
-import { Header as HeaderComponent } from "antd/es/layout/layout";
+// import { Button, Col, Image, Menu, Row } from "antd";
+// import { Header as HeaderComponent } from "antd/es/layout/layout";
+
+// components
+import HeaderDesktopMenu from "../Menu/HeaderDesktopMenu";
+import HeaderMobileMenu from "../Menu/HeaderMobileMenu";
 
 // custom layout
 import { CustomButtonLogin } from "../../CustomLayout";
@@ -26,7 +30,8 @@ import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";
 import MenuBurger from "../../resources/svg-components/MenuBurger";
 
 // css
-import "./Header.css";
+// import "./Header.css";
+// import "./HeaderTest.css";
 
 const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);
@@ -73,16 +78,18 @@ const Header = () => {
     key: element,
     // icon: element === "Products" && <AngleSmallDown color="#2d56a0" />,
     label:
-      element === "Login" ? (
-        <CustomButtonLogin
-          type="ghost"
-          className={`button-login ${headerActive && "button-login--active"}`}
-        >
-          {element}
-        </CustomButtonLogin>
-      ) : (
-        element
-      ),
+      element === "Login"
+        ? width >= 992 && (
+            <CustomButtonLogin
+              type="ghost"
+              className={`button-login ${
+                headerActive && "button-login--active"
+              }`}
+            >
+              {element}
+            </CustomButtonLogin>
+          )
+        : element,
     onClick: (element) => clickToNavigate(element),
     className: element === "Login" && "menu-login menu-login--transparent",
   }));
@@ -94,7 +101,7 @@ const Header = () => {
         logoWidth = 300;
         return logoWidth;
       case width >= 767:
-        logoWidth = 200;
+        logoWidth = 250;
         return logoWidth;
       case width < 767:
         logoWidth = 170;
@@ -109,16 +116,16 @@ const Header = () => {
     let paddingMenu = {};
     switch (true) {
       case width >= 1600:
-        paddingMenu = "0 15em 0 15em";
+        paddingMenu = "30px 10em";
         return paddingMenu;
       case width < 1600 && width >= 1500:
-        paddingMenu = "0 10em 0 10em";
+        paddingMenu = "30px 5em";
         return paddingMenu;
       case width < 1500 && width >= 1400:
-        paddingMenu = "0 5em 0 5em";
+        paddingMenu = "30px 2em";
         return paddingMenu;
       case width < 1400:
-        paddingMenu = "0 10px 0 10px";
+        paddingMenu = "30px 10px";
         return paddingMenu;
     }
     return paddingMenu;
@@ -135,69 +142,37 @@ const Header = () => {
 
   return (
     <>
-      {openSubMenu && (
-        <div
-          className="header__backdrop"
-          onClick={() => setOpenSubMenu(false)}
-        ></div>
+      {width >= 992 && (
+        <HeaderDesktopMenu
+          switchPaddingMenu={switchPaddingMenu}
+          width={width}
+          widthLogoIcon={widthLogoIcon}
+          navigate={navigate}
+          openMenuMobile={openMenuMobile}
+          setOpenMenuMobile={setOpenMenuMobile}
+          headerActive={headerActive}
+          location={location}
+          LogoBdiscomPrimary={LogoBdiscomPrimary}
+          LogoBdiscomWhite={LogoBdiscomWhite}
+          itemMenu={itemMenu}
+        />
       )}
 
-      <HeaderComponent
-        // onMouseOver={() => setHeaderActive(true)}
-        // onMouseOut={() => setHeaderActive(false)}
-        style={{ padding: switchPaddingMenu(width) }}
-        className={`${
-          headerActive || location.pathname !== "/"
-            ? "layout-header--active"
-            : "layout-header"
-        }`}
-      >
-        <div className="logo">
-          <Image
-            src={
-              headerActive || location.pathname !== "/"
-                ? LogoBdiscomPrimary
-                : LogoBdiscomWhite
-            }
-            width={widthLogoIcon(width)}
-            preview={false}
-            onClick={() => navigate("/")}
-          />
-        </div>
-
-        {width >= 1400 && (
-          <Menu theme="light" mode="horizontal" items={itemMenu} />
-        )}
-
-        {width < 1400 && (
-          <div className="mobile-burger-menu">
-            {/* <UserIcon /> */}
-            <MenuBurger
-              style={{ cursor: "pointer" }}
-              fill={headerActive && "var(--color-primary)"}
-              onClick={() => {
-                console.log("open menu mobile ");
-                setOpenMenuMobile(true);
-              }}
-            />
-          </div>
-        )}
-
-        {width < 1400 && openMenuMobile && (
-          <Menu theme="light" mode="inline" items={itemMenu} />
-        )}
-      </HeaderComponent>
-      {/* {openSubMenu && (
-        <Row className="mega-menu mega-menu--active">
-          <Col span={6}></Col>
-          <Col span={12}>
-            <h1>Product</h1>
-          </Col>
-          <Col span={6}>
-            <h1>X</h1>
-          </Col>
-        </Row>
-      )} */}
+      {width < 992 && (
+        <HeaderMobileMenu
+          switchPaddingMenu={switchPaddingMenu}
+          width={width}
+          widthLogoIcon={widthLogoIcon}
+          navigate={navigate}
+          openMenuMobile={openMenuMobile}
+          setOpenMenuMobile={setOpenMenuMobile}
+          headerActive={headerActive}
+          location={location}
+          LogoBdiscomPrimary={LogoBdiscomPrimary}
+          LogoBdiscomWhite={LogoBdiscomWhite}
+          itemMenu={itemMenu}
+        />
+      )}
     </>
   );
 };

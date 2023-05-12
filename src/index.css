@@ -69,6 +69,10 @@
   padding: 0;
 }
 
+body {
+  z-index: 1;
+}
+
 /** BASICS **/
 
 h1,
