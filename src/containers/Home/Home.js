@@ -5,8 +5,13 @@ import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 // antd
-import { Row, Col, Image } from "antd";
-import { CustomButtonPrimary } from "../../CustomLayout";
+import { Row, Col, Image, List, Card } from "antd";
+import {
+  CustomButtonPrimary,
+  CustomButtonSecondary,
+  CustomList,
+  CustomPagination,
+} from "../../CustomLayout";
 
 // image
 import HeroBgPcb from "../../resources/header/pcb.jpg";
@@ -18,12 +23,39 @@ import { AngleSmallDownIcon } from "../../resources/svg-components";
 
 // css
 import "./Home.css";
+import Meta from "antd/es/card/Meta";
 
 const Home = () => {
   const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
   const [secondIconButtonOver, setSecondIconButtonOver] = useState(false);
+  const [changePage, setChangePage] = useState(1);
 
   const { width, height } = useWindowDimensions();
+
+  const page = (width) => {
+    let numPagination;
+    let countPageSize = 1;
+
+    if (width < 576) {
+      numPagination = 1 * countPageSize;
+    }
+    if (width >= 576) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 768) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 992) {
+      numPagination = 3 * countPageSize;
+    }
+    if (width >= 1200) {
+      numPagination = 4 * countPageSize;
+    }
+    if (width >= 1600) {
+      numPagination = 6 * countPageSize;
+    }
+    return numPagination;
+  };
 
   //   const navigate = useNavigate();
   return (
@@ -73,8 +105,7 @@ const Home = () => {
                 tempora dolores cupiditate doloribus voluptatum aliquid corporis
                 fugiat.
               </p>
-              <CustomButtonPrimary
-                type="primary"
+              {/* <CustomButtonPrimary
                 className={`button-icon ${
                   firstIconButtonOver && "button-icon__over"
                 } button-primary`}
@@ -87,7 +118,8 @@ const Home = () => {
                 icon={firstIconButtonOver && <AngleSmallDownIcon fill="#fff" />}
               >
                 Learn more
-              </CustomButtonPrimary>
+              </CustomButtonPrimary> */}
+              <CustomButtonSecondary>Learn more</CustomButtonSecondary>
             </div>
           </Col>
           <Col xs={24} sm={24} lg={12} xl={12}>
@@ -125,23 +157,7 @@ const Home = () => {
                   tempora dolores cupiditate doloribus voluptatum aliquid
                   corporis fugiat.
                 </p>
-                <CustomButtonPrimary
-                  type="primary"
-                  className={`${
-                    secondIconButtonOver && "button-icon__over"
-                  } button-primary button-icon`}
-                  onMouseLeave={() => {
-                    setSecondIconButtonOver(false);
-                  }}
-                  onMouseOver={() => {
-                    setSecondIconButtonOver(true);
-                  }}
-                  icon={
-                    secondIconButtonOver && <AngleSmallDownIcon fill="#fff" />
-                  }
-                >
-                  Learn more
-                </CustomButtonPrimary>
+                <CustomButtonSecondary>Learn more</CustomButtonSecondary>
               </div>
             </Col>
           </Row>
@@ -196,24 +212,196 @@ const Home = () => {
                 tempora dolores cupiditate doloribus voluptatum aliquid corporis
                 fugiat.
               </p>
-              <CustomButtonPrimary
-                type="primary"
-                className={`${
-                  secondIconButtonOver && "button-icon__over"
-                } button-primary button-icon`}
-                onMouseLeave={() => {
-                  setSecondIconButtonOver(false);
-                }}
-                onMouseOver={() => {
-                  setSecondIconButtonOver(true);
-                }}
-                icon={
-                  secondIconButtonOver && <AngleSmallDownIcon fill="#fff" />
-                }
-              >
-                Learn more
-              </CustomButtonPrimary>
+              <CustomButtonSecondary>Learn more</CustomButtonSecondary>
             </div>
+          </Col>
+        </Row>
+        <Row>
+          {/* <Col
+            className="d-flex align-items-center justify-content-space-between"
+            style={{ width: "100%" }}
+          >
+            <h1 style={{ fontSize: "30px" }}>Title</h1>
+          </Col> */}
+          <Col style={{ width: "100%" }}>
+            <CustomList
+              size="large"
+              // header={
+              //   <div
+              //     style={{ position: "absolute", top: 0, left: 0, bottom: 0 }}
+              //   >
+              //     <h1 style={{ fontSize: "30px" }}>Title</h1>
+              //   </div>
+              // }
+              grid={{
+                xs: 1,
+                sm: 2,
+                md: 2,
+                lg: 3,
+                xl: 4,
+                xxl: 6,
+              }}
+              pagination={{ page: page(width) }}
+              dataSource={[
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+                <Image src={HeroBgPcb} preview={false} />,
+              ]}
+              renderItem={(item, index) => (
+                <List.Item
+                  style={{ justifyContent: "center", display: "flex" }}
+                >
+                  {item}
+                </List.Item>
+              )}
+            />
+          </Col>
+        </Row>
+        <Row className="ptb-100">
+          <Col
+            style={{ width: "100%" }}
+            className="d-flex justify-content-center"
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={24}
+          >
+            <div style={{ textAlign: "center" }}>
+              <h1 style={{ color: "var(--color-primary)", fontSize: "1.6em" }}>
+                Representatives
+              </h1>
+            </div>
+          </Col>
+          <Col style={{ width: "100%", marginTop: 50 }}>
+            <Row>
+              <Col
+                className="d-flex justify-content-center"
+                xs={24}
+                sm={24}
+                md={8}
+                lg={8}
+                xl={8}
+              >
+                <Card
+                  hoverable={false}
+                  style={{
+                    width: 350,
+                  }}
+                  cover={
+                    <img
+                      alt="example"
+                      style={{ height: "200px" }}
+                      src={HeroBgPcb01}
+                    />
+                  }
+                >
+                  <Meta
+                    style={{ width: "100%", margin: 0 }}
+                    title={<h1>Title</h1>}
+                    description={
+                      <div>
+                        <p>
+                          Hendit, id que que voloriae doloriatur si quaspeliquis
+                          esed que core quam volorro et duciet evellatibus
+                          moluptatur maxim et debitis alignime ima aces alitati
+                          onserfera deri tem.
+                        </p>
+                        <CustomButtonSecondary style={{ marginTop: 30 }}>
+                          Go to the website
+                        </CustomButtonSecondary>
+                      </div>
+                    }
+                  />
+                </Card>
+              </Col>
+              <Col
+                className="d-flex justify-content-center"
+                xs={24}
+                sm={24}
+                md={8}
+                lg={8}
+                xl={8}
+              >
+                <Card
+                  hoverable={false}
+                  style={{
+                    width: 350,
+                  }}
+                  cover={
+                    <img
+                      alt="example"
+                      style={{ height: "200px" }}
+                      src={HeroBgPcb01}
+                    />
+                  }
+                >
+                  <Meta
+                    style={{ width: "100%", margin: 0 }}
+                    title={<h1>Title</h1>}
+                    description={
+                      <div>
+                        <p>
+                          Hendit, id que que voloriae doloriatur si quaspeliquis
+                          esed que core quam volorro et duciet evellatibus
+                          moluptatur maxim et debitis alignime ima aces alitati
+                          onserfera deri tem.
+                        </p>
+                        <CustomButtonSecondary style={{ marginTop: 30 }}>
+                          Go to the website
+                        </CustomButtonSecondary>
+                      </div>
+                    }
+                  />
+                </Card>
+              </Col>
+              <Col
+                className="d-flex justify-content-center"
+                xs={24}
+                sm={24}
+                md={24}
+                lg={8}
+                xl={8}
+              >
+                <Card
+                  hoverable={false}
+                  style={{
+                    width: 350,
+                  }}
+                  cover={
+                    <img
+                      alt="example"
+                      style={{ height: "200px" }}
+                      src={HeroBgPcb01}
+                    />
+                  }
+                >
+                  <Meta
+                    style={{ width: "100%", margin: 0 }}
+                    title={<h1>Title</h1>}
+                    description={
+                      <div>
+                        <p>
+                          Hendit, id que que voloriae doloriatur si quaspeliquis
+                          esed que core quam volorro et duciet evellatibus
+                          moluptatur maxim et debitis alignime ima aces alitati
+                          onserfera deri tem.
+                        </p>
+                        <CustomButtonSecondary style={{ marginTop: 30 }}>
+                          Go to the website
+                        </CustomButtonSecondary>
+                      </div>
+                    }
+                  />
+                </Card>
+              </Col>
+            </Row>
           </Col>
         </Row>
         <Row style={{ height: "100vh" }}></Row>
