@@ -24,6 +24,8 @@ import { AngleSmallDownIcon } from "../../resources/svg-components";
 // css
 import "./Home.css";
 import Meta from "antd/es/card/Meta";
+import RepresentativesCard from "../../components/RepresentativesCard/RepresentativesCard";
+import ProductsCard from "../../components/ProductsCard/ProductsCard";
 
 const Home = () => {
   const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
@@ -119,7 +121,7 @@ const Home = () => {
               >
                 Learn more
               </CustomButtonPrimary> */}
-              <CustomButtonSecondary>Learn more</CustomButtonSecondary>
+              <CustomButtonSecondary title={"Learn more"} />
             </div>
           </Col>
           <Col xs={24} sm={24} lg={12} xl={12}>
@@ -157,7 +159,7 @@ const Home = () => {
                   tempora dolores cupiditate doloribus voluptatum aliquid
                   corporis fugiat.
                 </p>
-                <CustomButtonSecondary>Learn more</CustomButtonSecondary>
+                <CustomButtonSecondary title={"Learn more"} />
               </div>
             </Col>
           </Row>
@@ -212,7 +214,7 @@ const Home = () => {
                 tempora dolores cupiditate doloribus voluptatum aliquid corporis
                 fugiat.
               </p>
-              <CustomButtonSecondary>Learn more</CustomButtonSecondary>
+              <CustomButtonSecondary title={"Learn more"} />
             </div>
           </Col>
         </Row>
@@ -225,7 +227,6 @@ const Home = () => {
           </Col> */}
           <Col style={{ width: "100%" }}>
             <CustomList
-              size="large"
               // header={
               //   <div
               //     style={{ position: "absolute", top: 0, left: 0, bottom: 0 }}
@@ -234,6 +235,7 @@ const Home = () => {
               //   </div>
               // }
               grid={{
+                gutter: 24,
                 xs: 1,
                 sm: 2,
                 md: 2,
@@ -265,8 +267,7 @@ const Home = () => {
         </Row>
         <Row className="ptb-100">
           <Col
-            style={{ width: "100%" }}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center width-100"
             xs={24}
             sm={24}
             md={24}
@@ -279,129 +280,59 @@ const Home = () => {
               </h1>
             </div>
           </Col>
-          <Col style={{ width: "100%", marginTop: 50 }}>
-            <Row>
+          <Col className="mt-50 width-100">
+            <Row gutter={[0, 24]}>
               <Col
                 className="d-flex justify-content-center"
                 xs={24}
                 sm={24}
-                md={8}
-                lg={8}
+                md={12}
+                lg={12}
                 xl={8}
               >
-                <Card
-                  hoverable={false}
-                  style={{
-                    width: 350,
-                  }}
-                  cover={
-                    <img
-                      alt="example"
-                      style={{ height: "200px" }}
-                      src={HeroBgPcb01}
-                    />
-                  }
-                >
-                  <Meta
-                    style={{ width: "100%", margin: 0 }}
-                    title={<h1>Title</h1>}
-                    description={
-                      <div>
-                        <p>
-                          Hendit, id que que voloriae doloriatur si quaspeliquis
-                          esed que core quam volorro et duciet evellatibus
-                          moluptatur maxim et debitis alignime ima aces alitati
-                          onserfera deri tem.
-                        </p>
-                        <CustomButtonSecondary style={{ marginTop: 30 }}>
-                          Go to the website
-                        </CustomButtonSecondary>
-                      </div>
-                    }
-                  />
-                </Card>
+                <RepresentativesCard
+                  image={HeroBgPcb}
+                  title="TRUMPF Hüttinger"
+                  description="HUETTINGER Elektronik is a world-wide leader in manufacturing of power supplies for plasma applications, induction heating, and CO2 laser excitation."
+                  link="http://www.trumpf-huettinger.com/en.html"
+                />
               </Col>
               <Col
                 className="d-flex justify-content-center"
                 xs={24}
                 sm={24}
-                md={8}
-                lg={8}
+                md={12}
+                lg={12}
                 xl={8}
               >
-                <Card
-                  hoverable={false}
-                  style={{
-                    width: 350,
-                  }}
-                  cover={
-                    <img
-                      alt="example"
-                      style={{ height: "200px" }}
-                      src={HeroBgPcb01}
-                    />
-                  }
-                >
-                  <Meta
-                    style={{ width: "100%", margin: 0 }}
-                    title={<h1>Title</h1>}
-                    description={
-                      <div>
-                        <p>
-                          Hendit, id que que voloriae doloriatur si quaspeliquis
-                          esed que core quam volorro et duciet evellatibus
-                          moluptatur maxim et debitis alignime ima aces alitati
-                          onserfera deri tem.
-                        </p>
-                        <CustomButtonSecondary style={{ marginTop: 30 }}>
-                          Go to the website
-                        </CustomButtonSecondary>
-                      </div>
-                    }
-                  />
-                </Card>
+                <RepresentativesCard
+                  image={HeroBgPcb01}
+                  title="Gencoa"
+                  description="Gencoa provide sputter based solutions for the vacuum thin film deposition industry"
+                  link="http://www.gencoa.com/"
+                />
               </Col>
               <Col
                 className="d-flex justify-content-center"
                 xs={24}
                 sm={24}
-                md={24}
-                lg={8}
+                md={12}
+                lg={12}
                 xl={8}
               >
-                <Card
-                  hoverable={false}
-                  style={{
-                    width: 350,
-                  }}
-                  cover={
-                    <img
-                      alt="example"
-                      style={{ height: "200px" }}
-                      src={HeroBgPcb01}
-                    />
-                  }
-                >
-                  <Meta
-                    style={{ width: "100%", margin: 0 }}
-                    title={<h1>Title</h1>}
-                    description={
-                      <div>
-                        <p>
-                          Hendit, id que que voloriae doloriatur si quaspeliquis
-                          esed que core quam volorro et duciet evellatibus
-                          moluptatur maxim et debitis alignime ima aces alitati
-                          onserfera deri tem.
-                        </p>
-                        <CustomButtonSecondary style={{ marginTop: 30 }}>
-                          Go to the website
-                        </CustomButtonSecondary>
-                      </div>
-                    }
-                  />
-                </Card>
+                <RepresentativesCard
+                  image={HeroBgSpeed}
+                  title="MANITOU SYSTEMS Inc"
+                  description={`Azienda americana specializzata in accessori e dispositivi speciali per generatori e applicazioni "Plasma Radio Frequenza"`}
+                  link="http://www.manitousys.com/"
+                />
               </Col>
             </Row>
+          </Col>
+        </Row>
+        <Row className="ptb-100">
+          <Col className="width-100">
+            <ProductsCard />
           </Col>
         </Row>
         <Row style={{ height: "100vh" }}></Row>

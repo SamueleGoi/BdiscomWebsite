@@ -1,0 +1,28 @@
+.representative__card .ant-card-body {
+  padding: 24px 0 0 0;
+}
+
+.representative__card .representative__card--title {
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.representative__card .ant-card-body .representative__card__section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 200px;
+}
+
+.representative__card
+  .ant-card-body
+  .representative__card__section--button:hover {
+  color: var(--color-primary);
+}
+
+.representative__card
+  .ant-card-body
+  .representative__card__section--button:hover
+  svg {
+  margin-left: 0;
+}

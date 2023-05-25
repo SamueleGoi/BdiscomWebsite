@@ -76,10 +76,14 @@ body {
 /** BASICS **/
 
 h1,
-h2,
+h2 {
+  font-family: Mundial-Bold;
+  font-size: 1.2em;
+}
+
 h3,
 h4 {
-  font-family: Mundial-Bold;
+  font-family: Mundial-Medium;
   font-size: 1.2em;
 }
 
@@ -155,6 +159,11 @@ div {
 
 .pl-200 {
   padding-left: 200px;
+}
+
+/** WIDTH HEIGHT**/
+.width-100 {
+  width: 100%;
 }
 
 /* @media screen and (max-width: 992px) {
