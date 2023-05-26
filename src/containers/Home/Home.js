@@ -5,13 +5,15 @@ import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 // antd
-import { Row, Col, Image, List, Card } from "antd";
-import {
-  CustomButtonPrimary,
-  CustomButtonSecondary,
-  CustomList,
-  CustomPagination,
-} from "../../CustomLayout";
+import { Row, Col, Image, List } from "antd";
+import { CustomButtonSecondary, CustomList } from "../../CustomLayout";
+
+// components
+import RepresentativesCard from "../../components/RepresentativesCard/RepresentativesCard";
+import ProductsCard from "../../components/ProductsCard/ProductsCard";
+
+// utils
+import { mockdb } from "../../utils/mockdb";
 
 // image
 import HeroBgPcb from "../../resources/header/pcb.jpg";
@@ -19,13 +21,9 @@ import HeroBgSpeed from "../../resources/header/speed.jpg";
 import HeroBgPcb01 from "../../resources/header/pcb01.jpg";
 
 // icon
-import { AngleSmallDownIcon } from "../../resources/svg-components";
 
 // css
 import "./Home.css";
-import Meta from "antd/es/card/Meta";
-import RepresentativesCard from "../../components/RepresentativesCard/RepresentativesCard";
-import ProductsCard from "../../components/ProductsCard/ProductsCard";
 
 const Home = () => {
   const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
@@ -57,6 +55,31 @@ const Home = () => {
       numPagination = 6 * countPageSize;
     }
     return numPagination;
+  };
+
+  const paginationProducts = (width) => {
+    let numPagination;
+    let countPageSize = 1;
+
+    if (width < 576) {
+      numPagination = 1 * countPageSize;
+    }
+    if (width >= 576) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 768) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 992) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 1200) {
+      numPagination = 2 * countPageSize;
+    }
+    if (width >= 1600) {
+      numPagination = 3 * countPageSize;
+    }
+    return { numPagination };
   };
 
   //   const navigate = useNavigate();
@@ -107,20 +130,6 @@ const Home = () => {
                 tempora dolores cupiditate doloribus voluptatum aliquid corporis
                 fugiat.
               </p>
-              {/* <CustomButtonPrimary
-                className={`button-icon ${
-                  firstIconButtonOver && "button-icon__over"
-                } button-primary`}
-                onMouseLeave={() => {
-                  setFirstIconButtonOver(false);
-                }}
-                onMouseOver={(ele) => {
-                  setFirstIconButtonOver(true);
-                }}
-                icon={firstIconButtonOver && <AngleSmallDownIcon fill="#fff" />}
-              >
-                Learn more
-              </CustomButtonPrimary> */}
               <CustomButtonSecondary title={"Learn more"} />
             </div>
           </Col>
@@ -219,21 +228,8 @@ const Home = () => {
           </Col>
         </Row>
         <Row>
-          {/* <Col
-            className="d-flex align-items-center justify-content-space-between"
-            style={{ width: "100%" }}
-          >
-            <h1 style={{ fontSize: "30px" }}>Title</h1>
-          </Col> */}
           <Col style={{ width: "100%" }}>
             <CustomList
-              // header={
-              //   <div
-              //     style={{ position: "absolute", top: 0, left: 0, bottom: 0 }}
-              //   >
-              //     <h1 style={{ fontSize: "30px" }}>Title</h1>
-              //   </div>
-              // }
               grid={{
                 gutter: 24,
                 xs: 1,
@@ -265,6 +261,7 @@ const Home = () => {
             />
           </Col>
         </Row>
+
         <Row className="ptb-100">
           <Col
             className="d-flex justify-content-center width-100"
@@ -282,57 +279,54 @@ const Home = () => {
           </Col>
           <Col className="mt-50 width-100">
             <Row gutter={[0, 24]}>
-              <Col
-                className="d-flex justify-content-center"
-                xs={24}
-                sm={24}
-                md={12}
-                lg={12}
-                xl={8}
-              >
-                <RepresentativesCard
-                  image={HeroBgPcb}
-                  title="TRUMPF Hüttinger"
-                  description="HUETTINGER Elektronik is a world-wide leader in manufacturing of power supplies for plasma applications, induction heating, and CO2 laser excitation."
-                  link="http://www.trumpf-huettinger.com/en.html"
-                />
-              </Col>
-              <Col
-                className="d-flex justify-content-center"
-                xs={24}
-                sm={24}
-                md={12}
-                lg={12}
-                xl={8}
-              >
-                <RepresentativesCard
-                  image={HeroBgPcb01}
-                  title="Gencoa"
-                  description="Gencoa provide sputter based solutions for the vacuum thin film deposition industry"
-                  link="http://www.gencoa.com/"
-                />
-              </Col>
-              <Col
-                className="d-flex justify-content-center"
-                xs={24}
-                sm={24}
-                md={12}
-                lg={12}
-                xl={8}
-              >
-                <RepresentativesCard
-                  image={HeroBgSpeed}
-                  title="MANITOU SYSTEMS Inc"
-                  description={`Azienda americana specializzata in accessori e dispositivi speciali per generatori e applicazioni "Plasma Radio Frequenza"`}
-                  link="http://www.manitousys.com/"
-                />
-              </Col>
+              {mockdb().MockRepresentativesCard.map((item) => {
+                return (
+                  <Col
+                    key={item.key}
+                    className="d-flex justify-content-center"
+                    xs={24}
+                    sm={24}
+                    md={12}
+                    lg={12}
+                    xl={8}
+                  >
+                    <RepresentativesCard
+                      image={item.image}
+                      title={item.title}
+                      description={item.description}
+                      link={item.link}
+                    />
+                  </Col>
+                );
+              })}
             </Row>
           </Col>
         </Row>
+
         <Row className="ptb-100">
-          <Col className="width-100">
-            <ProductsCard />
+          <Col style={{ width: "100%" }}>
+            <CustomList
+              grid={{
+                gutter: 24,
+                xs: 1,
+                sm: 2,
+                md: 2,
+                lg: 2,
+                xl: 2,
+                xxl: 3,
+              }}
+              pagination={{ page: paginationProducts(width).numPagination }}
+              dataSource={mockdb().MockProductsCard}
+              renderItem={(item, index) => (
+                <List.Item>
+                  <ProductsCard
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                  />
+                </List.Item>
+              )}
+            />
           </Col>
         </Row>
         <Row style={{ height: "100vh" }}></Row>

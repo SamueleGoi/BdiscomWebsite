@@ -12,7 +12,13 @@ export const CustomButtonPrimary = (props) => {
 
 export const CustomButtonSecondary = (props) => {
   return (
-    <Button type="secondary" icon={<ArrowRight width={"20px"} />} {...props}>
+    <Button
+      type="secondary"
+      icon={
+        <ArrowRight width={"20px"} fill={props.fillIcon && props.fillIcon} />
+      }
+      {...props}
+    >
       {props.title}
     </Button>
   );

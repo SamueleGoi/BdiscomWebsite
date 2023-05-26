@@ -4,9 +4,6 @@ import React from "react";
 import Meta from "antd/es/card/Meta";
 import { CustomButtonSecondary, CustomCard } from "../../CustomLayout";
 
-//image
-import HeroBgPcb01 from "../../resources/header/pcb01.jpg";
-
 //css
 import "./RepresentativesCard.css";
 
@@ -19,11 +16,11 @@ const RepresentativesCard = (props) => {
         width: 350,
       }}
       cover={
-        <img alt="example" style={{ height: "200px" }} src={props.image} />
+        <img alt={props.title} src={props.image} style={{ height: "200px" }} />
       }
     >
       <Meta
-        title={<h1 className="representative__card--title">{props.title}</h1>}
+        title={<h3 className="representative__card--title">{props.title}</h3>}
         description={
           <div className="representative__card__section">
             <p className="representative__card__section--description">
