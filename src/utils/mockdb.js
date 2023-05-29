@@ -1,6 +1,18 @@
 //image
 import HeroBgPcb01 from "../resources/header/pcb01.jpg";
 
+// international distributors
+import BEAMTEC from "../resources/image/InternationalDistributors/beamtec.jpg";
+import MANITOU from "../resources/image/InternationalDistributors/manitou.jpg";
+import NEYCO from "../resources/image/InternationalDistributors/NEYCO.jpg";
+import AOT from "../resources/image/InternationalDistributors/AOT.jpg";
+import TRIPLEWINS from "../resources/image/InternationalDistributors/Triplewins.jpg";
+import VAC_TECHNICHE from "../resources/image/InternationalDistributors/vac_techniche.jpg";
+import NANO_4_ENERGY from "../resources/image/InternationalDistributors/nano4energy.jpg";
+import TOSHNIWAL from "../resources/image/InternationalDistributors/TOSHNIWAL.jpg";
+import SKYSYS from "../resources/image/InternationalDistributors/SKYSYS.jpg";
+import MITEC_GROUP from "../resources/image/InternationalDistributors/mitegroup.jpg";
+
 export const mockdb = () => {
   return {
     MockRepresentativesCard: [
@@ -97,6 +109,58 @@ export const mockdb = () => {
         image: HeroBgPcb01,
         title: "BDS SP 3, 6 and 12 Sputter Power Supplies",
         description: "BDS SP 3, 6 and 12 Sputter Power Supplies",
+        key: "9",
+      },
+    ],
+    MockInternationalDistributorsCard: [
+      {
+        image: BEAMTEC,
+        link: "http://www.beamtec.de/en/products/",
+        key: "0",
+      },
+      {
+        image: MANITOU,
+        link: "http://www.manitousys.com/",
+        key: "1",
+      },
+      {
+        image: NEYCO,
+        link: "http://www.neyco.fr/",
+        key: "2",
+      },
+      {
+        image: AOT,
+        link: "http://www.aot-tek.com/",
+        key: "3",
+      },
+      {
+        image: TRIPLEWINS,
+        link: "http://www.www-vacuum.com/",
+        key: "4",
+      },
+      {
+        image: VAC_TECHNICHE,
+        link: "http://www.vactechniche.com/",
+        key: "5",
+      },
+      {
+        image: NANO_4_ENERGY,
+        link: "http://www.nano4energy.eu/",
+        key: "6",
+      },
+      {
+        image: TOSHNIWAL,
+        link: "http://www.toshniwal.net/",
+        key: "7",
+      },
+      {
+        image: SKYSYS,
+        link: "http://www.skysysgroup.com.au/",
+        key: "8",
+      },
+      {
+        image: MITEC_GROUP,
+        link: "http://www.mitecgroup.it/",
         key: "9",
       },
     ],

@@ -11,6 +11,7 @@ import { CustomButtonSecondary, CustomList } from "../../CustomLayout";
 // components
 import RepresentativesCard from "../../components/RepresentativesCard/RepresentativesCard";
 import ProductsCard from "../../components/ProductsCard/ProductsCard";
+import HorizontalScollingMenu from "../../components/HorizontalScollingMenu/HorizontalScollingMenu";
 
 // utils
 import { mockdb } from "../../utils/mockdb";
@@ -19,8 +20,6 @@ import { mockdb } from "../../utils/mockdb";
 import HeroBgPcb from "../../resources/header/pcb.jpg";
 import HeroBgSpeed from "../../resources/header/speed.jpg";
 import HeroBgPcb01 from "../../resources/header/pcb01.jpg";
-
-// icon
 
 // css
 import "./Home.css";
@@ -142,6 +141,55 @@ const Home = () => {
           </Col>
         </Row>
 
+        <Row className="ptb-100">
+          <Col style={{ width: "100%" }}>
+            <HorizontalScollingMenu
+              titleHeader={"Products"}
+              renderItem={() => {
+                return mockdb().MockProductsCard.map((item) => {
+                  return (
+                    <ProductsCard
+                      key={item.key}
+                      title={item.title}
+                      description={item.description}
+                      image={item.image}
+                    />
+                  );
+                });
+              }}
+            />
+          </Col>
+        </Row>
+
+        <Row className="ptb-100">
+          <Col style={{ width: "100%" }}>
+            <HorizontalScollingMenu
+              titleHeader={"International Distributors"}
+              separatorItem={"international-disrtubutors--separator"}
+              renderItem={() => {
+                return mockdb().MockInternationalDistributorsCard.map(
+                  (item) => {
+                    return (
+                      <div
+                        style={{
+                          height: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <img
+                          src={item.image}
+                          style={{ width: 150, height: 100 }}
+                        />
+                      </div>
+                    );
+                  }
+                );
+              }}
+            />
+          </Col>
+        </Row>
+
         <div className="ptb-100">
           <Row>
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
@@ -227,40 +275,6 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col style={{ width: "100%" }}>
-            <CustomList
-              grid={{
-                gutter: 24,
-                xs: 1,
-                sm: 2,
-                md: 2,
-                lg: 3,
-                xl: 4,
-                xxl: 6,
-              }}
-              pagination={{ page: page(width) }}
-              dataSource={[
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-                <Image src={HeroBgPcb} preview={false} />,
-              ]}
-              renderItem={(item, index) => (
-                <List.Item
-                  style={{ justifyContent: "center", display: "flex" }}
-                >
-                  {item}
-                </List.Item>
-              )}
-            />
-          </Col>
-        </Row>
 
         <Row className="ptb-100">
           <Col
@@ -303,33 +317,7 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className="ptb-100">
-          <Col style={{ width: "100%" }}>
-            <CustomList
-              grid={{
-                gutter: 24,
-                xs: 1,
-                sm: 2,
-                md: 2,
-                lg: 2,
-                xl: 2,
-                xxl: 3,
-              }}
-              pagination={{ page: paginationProducts(width).numPagination }}
-              dataSource={mockdb().MockProductsCard}
-              renderItem={(item, index) => (
-                <List.Item>
-                  <ProductsCard
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                  />
-                </List.Item>
-              )}
-            />
-          </Col>
-        </Row>
-        <Row style={{ height: "100vh" }}></Row>
+        <Row style={{ height: "30vh" }}></Row>
       </div>
     </>
   );
