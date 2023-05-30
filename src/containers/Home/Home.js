@@ -16,10 +16,12 @@ import HorizontalScollingMenu from "../../components/HorizontalScollingMenu/Hori
 // utils
 import { mockdb } from "../../utils/mockdb";
 
-// image
-import HeroBgPcb from "../../resources/header/pcb.jpg";
-import HeroBgSpeed from "../../resources/header/speed.jpg";
-import HeroBgPcb01 from "../../resources/header/pcb01.jpg";
+// image header
+import HEA01 from "../../resources/images/Header/HEA01.jpg";
+import HEA02 from "../../resources/images/Header/HEA02.jpg";
+import HEA03 from "../../resources/images/Header/HEA03.jpg";
+import HEA04 from "../../resources/images/Header/HEA04.jpg";
+import HEA05 from "../../resources/images/Header/HEA05.jpg";
 
 // css
 import "./Home.css";
@@ -134,7 +136,7 @@ const Home = () => {
           </Col>
           <Col xs={24} sm={24} lg={12} xl={12}>
             <Image
-              src={HeroBgSpeed}
+              src={HEA01}
               height={width >= 992 ? 700 : "100%"}
               preview={false}
             />
@@ -223,7 +225,7 @@ const Home = () => {
 
           <Row gutter={[12, 12]} className="mt-50">
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-              <Image src={HeroBgSpeed} height={"95%"} preview={false} />
+              <Image src={HEA01} height={"95%"} preview={false} />
             </Col>
             <Col
               xs={24}
@@ -233,7 +235,7 @@ const Home = () => {
               xl={6}
               className="d-flex align-items-end"
             >
-              <Image src={HeroBgSpeed} height={300} preview={false} />
+              <Image src={HEA01} height={300} preview={false} />
             </Col>
             <Col
               xs={24}
@@ -243,14 +245,14 @@ const Home = () => {
               xl={6}
               className="d-flex align-items-center"
             >
-              <Image src={HeroBgSpeed} height={300} preview={false} />
+              <Image src={HEA01} height={300} preview={false} />
             </Col>
           </Row>
         </div>
 
         <Row className="ptb-100" gutter={[0, 24]}>
           <Col span={14} xs={24} sm={24} md={24} lg={14} xl={14}>
-            <Image src={HeroBgSpeed} height={"100%"} preview={false} />
+            <Image src={HEA01} height={"100%"} preview={false} />
           </Col>
           <Col
             xs={24}
