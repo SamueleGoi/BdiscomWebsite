@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserIcon = (props) => {
+const AngleSmallDown = (props) => {
   return (
     <svg
       version="1.1"
@@ -8,9 +8,9 @@ const UserIcon = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
-      width="25px"
       viewBox="0 0 512 512"
-      color="#2d56a0"
+      width={props.width ? props.width : "25px"}
+      fill={props.fill ? props.fill : "#fff"}
     >
       <style type="text/css"></style>
       <path
@@ -23,4 +23,4 @@ const UserIcon = (props) => {
   );
 };
 
-export default UserIcon;
+export default AngleSmallDown;

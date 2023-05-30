@@ -1,0 +1,137 @@
+.header__mobile {
+  padding: 30px 10px;
+  background-color: transparent;
+  z-index: 101;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header__mobile--not-active {
+  background-color: transparent;
+}
+
+.header__mobile--active {
+  background-color: var(--bg-color-light);
+  /* background-color: rgba(1, 1, 1, 0.9); */
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 5px #444444;
+}
+
+.header__mobile .hamburger {
+  display: block;
+}
+
+.header__mobile .row-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__mobile .nav-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--bg-color-light);
+  /* transition: all 0.5s linear; */
+  max-width: 60%;
+  height: 100vh;
+  /* box-shadow: 2px -5px 5px 3px #ccc; */
+  opacity: 1;
+  /* visibility: hidden; */
+  animation: openMenuMobile;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes openMenuMobile {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* .header__mobile .is-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  right: 0;
+} */
+
+.header__mobile .nav-list,
+.header__mobile .logo-wrap--open {
+  flex-direction: column;
+  align-items: unset;
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+  transition-property: all;
+  padding: 10px;
+}
+
+.header__mobile .logo-wrap--open {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: inherit;
+  align-items: center;
+}
+
+.header__mobile .is-open .nav-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__mobile .nav-list li {
+  padding: 7px 10px;
+}
+
+.header__mobile .nav-list li a {
+  color: var(--color-primary);
+  text-align: left;
+  display: inline-block;
+  padding: 2px 0;
+}
+
+/* .header__mobile .nav-list li a::after {
+  content: "";
+  background-color: var(--color-primary);
+  width: 0;
+  height: 5px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  transition: all 0.3s linear;
+  width: 20%;
+} */
+
+.header__mobilev .nav-list li.menu-login--transparent a::after {
+  display: none;
+}
+
+.header__mobile .nav-list li a:hover::after {
+  width: 20%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  z-index: 100;
+}

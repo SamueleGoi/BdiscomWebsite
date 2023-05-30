@@ -1,0 +1,95 @@
+.header__desktop {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header__desktop--not-active {
+  background-color: transparent;
+}
+
+.header__desktop--active {
+  background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 5px #444444;
+}
+
+.logo {
+}
+
+.header__desktop .container {
+  padding: 0 15px;
+  z-index: 100;
+}
+
+.header__desktop .row-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__desktop .nav-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.header__desktop .nav-list li {
+  padding: 0 10px;
+}
+
+.header__desktop .nav-list li a {
+  font-family: Mundial-Bold;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 0;
+  position: relative;
+  display: block;
+}
+
+.header__desktop .nav-list li a::after {
+  content: "";
+  background-color: #ffffff;
+  width: 0;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: all 0.3s linear;
+}
+
+.header__desktop--active .nav-list li a {
+  font-family: Mundial-Bold;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 10px 0;
+  position: relative;
+  display: block;
+}
+
+.header__desktop--active .nav-list li a::after {
+  content: "";
+  background-color: var(--color-primary);
+  width: 0;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: all 0.3s linear;
+}
+
+.header__desktop .nav-list li.menu-login--transparent a::after {
+  display: none;
+}
+
+.header__desktop .nav-list li a:hover::after {
+  width: 100%;
+}

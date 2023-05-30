@@ -8,7 +8,8 @@
 
   /* button*/
   --button-color-primary: #2d56a0;
-  --button-color-dark: #ddd;
+  --button-color-dark: #000;
+  --button-color-light: #fff;
 
   /* content */
   --color-primary: #2d56a0;
@@ -68,13 +69,21 @@
   padding: 0;
 }
 
+body {
+  z-index: 1;
+}
+
 /** BASICS **/
 
 h1,
-h2,
+h2 {
+  font-family: Mundial-Bold;
+  font-size: 1.2em;
+}
+
 h3,
 h4 {
-  font-family: Mundial-Bold;
+  font-family: Mundial-Medium;
   font-size: 1.2em;
 }
 
@@ -84,6 +93,115 @@ span,
 div {
   font-family: Mundial-Light;
   font-size: 18px;
+}
+
+/** PADDING OR MARGIN **/
+.mt-200 {
+  margin-top: 200px;
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 992px) {
+  .ptb-100 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.ptb-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.plr-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.plr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.plr-100 {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.plr-200 {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.pr-200 {
+  padding-right: 200px;
+}
+
+.pl-200 {
+  padding-left: 200px;
+}
+
+/** WIDTH HEIGHT**/
+.width-100 {
+  width: 100%;
+}
+
+/* @media screen and (max-width: 992px) {
+  .plr-100,
+  .plr-200 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+} */
+
+/** ALIGN **/
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: end;
 }
 
 .text-align-center {
@@ -98,17 +216,16 @@ div {
   text-align: right;
 }
 
-/** HEADER MENU**/
-.ant-layout-header ul li span {
-  font-family: Mundial-Bold;
-  /* text-transform: capitalize; */
-  letter-spacing: 2px;
-  font-size: 17px;
-}
-
 /** VARIOUS SECTION **/
 
-.section-content__text {
-  padding: 50px;
+.section-content__large {
+  min-height: 800px;
+}
+
+.section-content__medium {
+  min-height: 600px;
+}
+
+.section-content__small {
   min-height: 400px;
 }

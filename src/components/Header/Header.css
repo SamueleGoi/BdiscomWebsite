@@ -3,10 +3,8 @@
   top: 0;
   z-index: 2;
   width: 100%;
-  color: var(--bg-color-light);
   line-height: 120px;
   height: 120px;
-  padding: 0 15em 0 15em;
 }
 
 .layout-header {
@@ -16,6 +14,7 @@
 .layout-header--active {
   background-color: var(--bg-color-light);
   transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 5px #444444;
 }
 
 .logo {
@@ -26,14 +25,13 @@
 
 .logo .ant-image {
   display: flex;
-  height: 100px;
+  height: 120px;
 }
 
-/* .logo .logo__image {
-  background-image: url("../../resources/logo/logo.svg");
-  width: 400px;
-  height: 200px;
-} */
+.mobile-burger-menu {
+  float: right;
+  vertical-align: middle;
+}
 
 .login {
   float: right;
@@ -46,15 +44,18 @@
   background-color: #000;
 }
 
+.ant-layout-header ul li span {
+  font-family: Mundial-Bold;
+  /* text-transform: capitalize; */
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
 .ant-layout-header ul.ant-menu-overflow {
   justify-content: flex-end;
   background: transparent;
   border-bottom: transparent;
   line-height: 120px;
-}
-
-.menu-login--transparent::after {
-  border-bottom-color: transparent !important;
 }
 
 .ant-layout-header ul li.ant-menu-item-selected::after {
@@ -76,10 +77,25 @@
   border-bottom-color: var(--color-primary) !important;
 }
 
+.menu-login {
+  margin-right: 2em;
+}
+
+.menu-login--transparent::after {
+  border-bottom: 0 !important;
+}
+
 .ant-menu-title-content {
+  font-family: Mundial-Bold !important;
   font-size: 18px !important;
   color: var(--bg-color-light) !important;
 }
+
+/* @media screen and (max-width: 1400px) {
+  .ant-menu-title-content {
+    font-size: 16px !important;
+  }
+} */
 
 .layout-header--active .ant-menu-title-content {
   font-size: 18px !important;
