@@ -3,10 +3,14 @@ import React from "react";
 // antd
 import { Image } from "antd";
 
+// models
+import { IMenuProps } from "../../models/Menu/IMenu";
+import { IItemMenu } from "../../models/Header/IHeader";
+
 // css
 import "./HeaderDesktopMenu.css";
 
-const HeaderDesktopMenu = (props) => {
+const HeaderDesktopMenu: React.FC<IMenuProps> = (props) => {
   return (
     <>
       <header
@@ -36,7 +40,7 @@ const HeaderDesktopMenu = (props) => {
             </div>
             <div className={`nav-wrap`}>
               <ul className="nav-list">
-                {props.itemMenu?.map((item) => {
+                {props.itemMenu?.map((item: IItemMenu) => {
                   return (
                     <li key={item.key} className={item.className}>
                       <a onClick={item.onClick}>{item.label}</a>

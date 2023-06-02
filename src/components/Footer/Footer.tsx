@@ -2,7 +2,9 @@ import React from "react";
 
 import { Footer as FooterComponent } from "antd/es/layout/layout";
 
-const Footer = () => {
+interface IFooterProps {}
+
+const Footer: React.FC<IFooterProps> = () => {
   return (
     <FooterComponent
       style={{

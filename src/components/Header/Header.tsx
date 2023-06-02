@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-// antd
-// import { Button, Col, Image, Menu, Row } from "antd";
-// import { Header as HeaderComponent } from "antd/es/layout/layout";
-
 // components
 import HeaderDesktopMenu from "../Menu/HeaderDesktopMenu";
 import HeaderMobileMenu from "../Menu/HeaderMobileMenu";
@@ -24,19 +20,15 @@ import { HEIGHT_POSITION } from "../../utils/constant";
 import LogoBdiscomPrimary from "../../resources/logo/logo.svg";
 import LogoBdiscomWhite from "../../resources/logo/logo bianco.svg";
 
-// icon
-import UserIcon from "../../resources/svg-components/User";
-import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";
-import MenuBurger from "../../resources/svg-components/MenuBurger";
+// models
+import { IItemMenu } from "../../models/Header/IHeader";
 
-// css
-// import "./Header.css";
-// import "./HeaderTest.css";
+interface IHeaderProps {}
 
-const Header = () => {
-  const [openSubMenu, setOpenSubMenu] = useState(false);
-  const [headerActive, setHeaderActive] = useState(false);
-  const [openMenuMobile, setOpenMenuMobile] = useState(false);
+const Header: React.FC<IHeaderProps> = () => {
+  // const [openSubMenu, setOpenSubMenu] = useState<boolean>(false);
+  const [headerActive, setHeaderActive] = useState<boolean>(false);
+  const [openMenuMobile, setOpenMenuMobile] = useState<boolean>(false);
   // const [pathname, setPathname] = useState("");
 
   const { width } = useWindowDimensions();
@@ -46,18 +38,18 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const openMegaMenuOrNavigate = (key) => {
-    switch (key) {
-      case "login":
-        return console.log("navigate");
-      case "products":
-        return setOpenSubMenu(true);
-      default:
-        break;
-    }
-  };
+  // const openMegaMenuOrNavigate = (key: string) => {
+  //   switch (key) {
+  //     case "login":
+  //       return console.log("navigate");
+  //     case "products":
+  //       return setOpenSubMenu(true);
+  //     default:
+  //       break;
+  //   }
+  // };
 
-  const clickToNavigate = (element) => {
+  const clickToNavigate = (element: IItemMenu) => {
     switch (element.key) {
       case "Who we are":
         return navigate("/about");
@@ -79,7 +71,8 @@ const Header = () => {
     // icon: element === "Products" && <AngleSmallDown color="#2d56a0" />,
     label:
       element === "Login"
-        ? width >= 992 && (
+        ? width &&
+          width >= 992 && (
             <CustomButtonLogin
               type="ghost"
               className={`button-login ${
@@ -90,11 +83,11 @@ const Header = () => {
             </CustomButtonLogin>
           )
         : element,
-    onClick: (element) => clickToNavigate(element),
+    onClick: (element: IItemMenu) => clickToNavigate(element),
     className: element === "Login" && "menu-login menu-login--transparent",
   }));
 
-  const widthLogoIcon = (width) => {
+  const widthLogoIcon = (width: number) => {
     let logoWidth = 0;
     switch (true) {
       case width >= 1400:
@@ -112,7 +105,7 @@ const Header = () => {
     return logoWidth;
   };
 
-  const switchPaddingMenu = (width) => {
+  const switchPaddingMenu = (width: number) => {
     let paddingMenu = {};
     switch (true) {
       case width >= 1600:
@@ -131,10 +124,6 @@ const Header = () => {
     return paddingMenu;
   };
 
-  // useEffect(() => {
-  //   setPathname(location.pathname);
-  // }, [location]);
-
   useEffect(() => {
     scrollPosition < HEIGHT_POSITION && setHeaderActive(false);
     scrollPosition >= HEIGHT_POSITION && setHeaderActive(true);
@@ -142,7 +131,7 @@ const Header = () => {
 
   return (
     <>
-      {width >= 992 && (
+      {width && width >= 992 && (
         <HeaderDesktopMenu
           switchPaddingMenu={switchPaddingMenu}
           width={width}
@@ -158,7 +147,7 @@ const Header = () => {
         />
       )}
 
-      {width < 992 && (
+      {width && width < 992 && (
         <HeaderMobileMenu
           switchPaddingMenu={switchPaddingMenu}
           width={width}

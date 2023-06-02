@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function useWindowDimensions() {
+interface IUseWindowDimensions {
+  width: number | null;
+  height: number | null;
+}
+
+export default function useWindowDimensions(): IUseWindowDimensions {
   const hasWindow = typeof window !== "undefined";
 
   function getWindowDimensions() {
@@ -12,19 +17,19 @@ export default function useWindowDimensions() {
     };
   }
 
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+  function handleResize() {
+    setWindowDimensions(getWindowDimensions());
+  }
+
+  const [windowDimensions, setWindowDimensions] =
+    useState<IUseWindowDimensions>(getWindowDimensions());
 
   useEffect(() => {
     if (hasWindow) {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
+    return undefined;
   }, [hasWindow]);
 
   return windowDimensions;

@@ -3,8 +3,13 @@ import React, { useContext } from "react";
 //icon
 import { ArrowLeft, ArrowRight } from "../../resources/svg-components";
 
-const HeaderScrollingMenu = (props) => {
-  const { isLastItemVisible, scrollNext, scrollPrev, isFirstItemVisible } =
+interface IHeaderScrollingMenuProps {
+  titleHeader: string;
+  VisibilityContext: any;
+}
+
+const HeaderScrollingMenu: React.FC<IHeaderScrollingMenuProps> = (props) => {
+  const { isLastItemVisible, scrollNext, scrollPrev, isFirstItemVisible }: any =
     useContext(props.VisibilityContext);
 
   return (

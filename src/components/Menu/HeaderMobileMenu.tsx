@@ -7,10 +7,14 @@ import { Image } from "antd";
 import MenuBurger from "../../resources/svg-components/MenuBurger";
 import User from "../../resources/svg-components/User";
 
+// models
+import { IMenuProps } from "../../models/Menu/IMenu";
+import { IItemMenu } from "../../models/Header/IHeader";
+
 //css
 import "./HeaderMobileMenu.css";
 
-const HeaderMobileMenu = (props) => {
+const HeaderMobileMenu: React.FC<IMenuProps> = (props) => {
   return (
     <>
       {!props.openMenuMobile && (
@@ -85,7 +89,7 @@ const HeaderMobileMenu = (props) => {
                     </div>
                   </div>
                   <ul className="nav-list">
-                    {props.itemMenu?.map((item) => {
+                    {props.itemMenu?.map((item: IItemMenu) => {
                       return (
                         <li key={item.key} className={item.className}>
                           <a onClick={item.onClick}>{item.label}</a>
