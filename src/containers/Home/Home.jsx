@@ -318,8 +318,6 @@ const Home = () => {
             </Row>
           </Col>
         </Row>
-
-        <Row style={{ height: "30vh" }}></Row>
       </div>
     </>
   );

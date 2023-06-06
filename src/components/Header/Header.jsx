@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-// antd
-// import { Button, Col, Image, Menu, Row } from "antd";
-// import { Header as HeaderComponent } from "antd/es/layout/layout";
-
 // components
 import HeaderDesktopMenu from "../Menu/HeaderDesktopMenu";
 import HeaderMobileMenu from "../Menu/HeaderMobileMenu";
@@ -23,15 +19,6 @@ import { HEIGHT_POSITION } from "../../utils/constant";
 // logo
 import LogoBdiscomPrimary from "../../resources/logo/logo.svg";
 import LogoBdiscomWhite from "../../resources/logo/logo bianco.svg";
-
-// icon
-import UserIcon from "../../resources/svg-components/User";
-import AngleSmallDown from "../../resources/svg-components/AngleSmallDown";
-import MenuBurger from "../../resources/svg-components/MenuBurger";
-
-// css
-// import "./Header.css";
-// import "./HeaderTest.css";
 
 const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState(false);

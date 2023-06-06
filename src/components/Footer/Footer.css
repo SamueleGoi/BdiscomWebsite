@@ -1,0 +1,23 @@
+.footer__section {
+  height: 600px;
+  background-color: var(--color-primary);
+  padding: 2em 0 0 0;
+  /* padding: 3em 10em 3em 10em; */
+}
+
+.footer__section--border-top-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__section--border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__section--padding {
+  padding: 10px 10px;
+}
+
+.footer__selection--logo-white {
+  width: 250px;
+}
