@@ -42,12 +42,12 @@ const ProductsCard = (props) => {
     if (width >= 1200) {
       fontSizeTitleStyle = { fontSize: "1.8rem" };
       fontSizeDescriptionStyle = { fontSize: "1ìem" };
-      widthHeightStyle = { width: "370px", height: "620px" };
+      widthHeightStyle = { width: "370px", height: "550px" };
     }
     if (width >= 1600) {
       fontSizeTitleStyle = { fontSize: "2rem" };
       fontSizeDescriptionStyle = { fontSize: "1ìrem" };
-      widthHeightStyle = { width: "400px", height: "700px" };
+      widthHeightStyle = { width: "400px", height: "550px" };
     }
     return { fontSizeTitleStyle, fontSizeDescriptionStyle, widthHeightStyle };
   };
@@ -76,6 +76,22 @@ const ProductsCard = (props) => {
         >
           {props.title}
         </h3>
+        <h3
+          className="product__card--title"
+          style={
+            showDescription
+              ? {
+                  color: "var(--color-light)",
+                  fontSize: customStyle(width).fontSizeTitleStyle.fontSize,
+                }
+              : {
+                  color: "var(--color-primary)",
+                  fontSize: customStyle(width).fontSizeTitleStyle.fontSize,
+                }
+          }
+        >
+          {props.subtitle}
+        </h3>
       </div>
 
       <img className="product__card--image" src={props.image} alt="" />
@@ -91,11 +107,11 @@ const ProductsCard = (props) => {
           <p style={customStyle(width).fontSizeDescriptionStyle}>
             {props.description}
           </p>
-          <CustomButtonSecondary
+          {/* <CustomButtonSecondary
             title="Learn more"
             fillIcon="#fff"
             style={{ color: "#fff" }}
-          />
+          /> */}
         </div>
       </div>
     </div>

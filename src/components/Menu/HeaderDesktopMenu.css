@@ -43,9 +43,9 @@
 }
 
 .header__desktop .nav-list li a {
-  font-family: Mundial-Bold;
+  font-family: Raleway-Bold;
   letter-spacing: 2px;
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
   padding: 10px 0;
@@ -65,9 +65,9 @@
 }
 
 .header__desktop--active .nav-list li a {
-  font-family: Mundial-Bold;
+  font-family: Raleway-Bold;
   letter-spacing: 2px;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-primary);
   text-decoration: none;
   padding: 10px 0;

@@ -6,9 +6,10 @@
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
+  background-color: rgba(45, 86, 160, 0.03);
 }
 .product__card__section {
-  padding: 3.2rem 2.2rem 0 2.2rem;
+  padding: 3.2rem 0.8rem 0 0.8rem;
   z-index: 3;
 }
 
@@ -54,10 +55,11 @@
 }
 
 .show-product-description__section--description {
-  padding: 0 2.2rem 3.5rem 2.2rem;
+  padding: 0 0.8rem 1rem 0.8rem;
 }
 
 .show-product-description__section--description p {
   color: var(--color-light);
   margin-bottom: 4.27778rem;
+  font-size: 20px;
 }

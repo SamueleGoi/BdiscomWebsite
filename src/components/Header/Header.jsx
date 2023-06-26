@@ -59,7 +59,8 @@ const Header = () => {
     "Who we are",
     "What we do",
     "Products",
-    "Contact",
+    "Work with us",
+    "Contacts",
     "Login",
   ].map((element) => ({
     key: element,

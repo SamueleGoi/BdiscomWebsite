@@ -12,12 +12,18 @@ import NANO_4_ENERGY from "../resources/images/InternationalDistributors/nano4en
 import TOSHNIWAL from "../resources/images/InternationalDistributors/TOSHNIWAL.jpg";
 import SKYSYS from "../resources/images/InternationalDistributors/SKYSYS.jpg";
 import MITEC_GROUP from "../resources/images/InternationalDistributors/mitegroup.jpg";
+import YJ from "../resources/images/InternationalDistributors/236_Y&J_TECH_TAIWAN.jpg";
+
+// Representatives
+import GENCOA from "../resources/images/Representatives/132_rappresentate_1.jpg";
+import TRUMPF from "../resources/images/Representatives/167_TRUMPF_logo.jpg";
+import MANITOU_REP from "../resources/images/Representatives/214_manitou.jpg";
 
 export const mockdb = () => {
   return {
     MockRepresentativesCard: [
       {
-        image: WWD01,
+        image: TRUMPF,
         title: "TRUMPF Hüttinger",
         description:
           "HUETTINGER Elektronik is a world-wide leader in manufacturing of power supplies for plasma applications, induction heating, and CO2 laser excitation.",
@@ -25,7 +31,7 @@ export const mockdb = () => {
         key: "0",
       },
       {
-        image: WWD01,
+        image: GENCOA,
         title: "Gencoa",
         description:
           "Gencoa provide sputter based solutions for the vacuum thin film deposition industry",
@@ -33,7 +39,7 @@ export const mockdb = () => {
         key: "1",
       },
       {
-        image: WWD01,
+        image: MANITOU_REP,
         title: "MANITOU SYSTEMS Inc",
         description:
           "Azienda americana specializzata in accessori e dispositivi speciali per generatori e applicazioni 'Plasma Radio Frequenza'",
@@ -44,70 +50,64 @@ export const mockdb = () => {
     MockProductsCard: [
       {
         image: WWD01,
-        title: "BDS-ARC Generator",
+        title: "BDS.ARC",
+        subtitle: "Arc Plasma Generator",
         description:
           "The most reliable high performance generator for high current CAE processes with high efficiency (> 90 %)",
         key: "0",
       },
       {
         image: WWD01,
-        title: "BDS-MF Generator",
+        title: "BDS.MF",
         description:
           "The newest and most price competitive medium frequency generator for any High/Low Voltage ( 3kV to 7kV ) PECVD and PVD processes",
         key: "1",
       },
       {
         image: WWD01,
-        title: "BDS HF 200 - 300 - 750 Black Box Series",
+        title: "BDS.HF",
         description:
           "New generation of very price competitive and High efficiency 200, 300 and 750 Watt 13.56 MHz Black Box RF generators",
         key: "2",
       },
       {
         image: WWD01,
-        title: "BDS HF 200 - 300 - 400 - 750 Active Front Panel Series",
-        description:
-          "New generation of very price competitive and High efficiency 200, 300 and 750 Watt 13.56 MHz Active Panel RF generators",
-        key: "3",
-      },
-      {
-        image: WWD01,
-        title: "BDS AMN 750 RF Auto Matching Network",
+        title: "BDS.AMN",
         description:
           "BDISCOM is introducing a new generation of automatic matching network units operating at the standard ISM frequency of 13.56 MHz intended for industrial and laboratory use. Typical application include Sputtering process, PECVD deposition, plasma activation, dielectric heating, laser excitation and more.",
         key: "4",
       },
       {
         image: WWD01,
-        title: "Plasma Matrix & Super Plasma Matrix",
+        title: "BDS.SP",
         description:
           "Very price competitive  Table Top RF  13.56 MHz plasma reactor system series for most of the Cleaning/Etching process in R/D or small Industrial pilot  production (from 2.5 to 40 litres SS 304 vacuum chambers)",
         key: "5",
       },
       {
         image: WWD01,
-        title: "BDS VIMM",
+        title: "BDS.HV",
         description:
           "The BDS VIMM - Variable Inductor Manual Matching Unit - is the most compact RF 13.56 MHz inductive manual matching network currently available on the market with some unique features described in the below specifications.",
         key: "6",
       },
       {
         image: WWD01,
-        title: "BDS GLOW 3000/6000 Generator",
+        title: "Spare",
         description:
           "New high voltage DC generator with AFP (touch screen Active Front Panel) for glow discharge processes",
         key: "7",
       },
       {
         image: WWD01,
-        title: "BDS SP 500 DC Sputter Power Supply",
+        title: "Spare",
         description:
           "Highly price competitive DC power supply with fast arc detection (< 200 nSec ) and digital interfaces. Suitable for small and medium R/D and industrial sputter tools.",
         key: "8",
       },
       {
         image: WWD01,
-        title: "BDS SP 3, 6 and 12 Sputter Power Supplies",
+        title: "Spare",
         description: "BDS SP 3, 6 and 12 Sputter Power Supplies",
         key: "9",
       },
@@ -162,6 +162,11 @@ export const mockdb = () => {
         image: MITEC_GROUP,
         link: "http://www.mitecgroup.it/",
         key: "9",
+      },
+      {
+        image: YJ,
+        link: "http://www.yjtech.com.tw/",
+        key: "10",
       },
     ],
   };

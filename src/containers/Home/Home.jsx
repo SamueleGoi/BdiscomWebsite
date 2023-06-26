@@ -106,9 +106,9 @@ const Home = () => {
           <Col span={24} className="first-section__column text-align-center">
             <h1>Bdiscom Srl key supplier for plasma generators</h1>
             <p>
-              Bdiscom Srl is manufactoring company of DCHV, DCLV, MF and RF
+              Bdiscom Srl is manufacturing company of DCHV, DCLV, MF and RF
               generators and related power accessories for most of the vacuum
-              plasma applications to be used in both R/D and industrial
+              plasma applications to be used in both R&D and industrial
               production.
             </p>
           </Col>
@@ -123,11 +123,15 @@ const Home = () => {
             className="d-flex align-items-start"
           >
             <div className={`${width >= 992 && "pr-200"} section-home__about`}>
-              <h1>Title</h1>
+              <h1>Who we are</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
                 fuga mollitia voluptates, dolorem sint sapiente doloremque
+                tempora dolores cupiditate doloribus voluptatum aliquid corporis
+                fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Aliquam, perferendis iure? Obcaecati inventore deserunt
+                sequi fuga mollitia voluptates, dolorem sint sapiente doloremque
                 tempora dolores cupiditate doloribus voluptatum aliquid corporis
                 fugiat.
               </p>
@@ -136,10 +140,42 @@ const Home = () => {
           </Col>
           <Col xs={24} sm={24} lg={12} xl={12}>
             <Image
-              src={HEA01}
+              src={HEA03}
               height={width >= 992 ? 700 : "100%"}
               preview={false}
             />
+          </Col>
+        </Row>
+
+        <Row className="ptb-100" gutter={[0, 24]}>
+          <Col span={14} xs={24} sm={24} md={24} lg={14} xl={14}>
+            <Image src={HEA03} height={"100%"} preview={false} />
+          </Col>
+          <Col
+            xs={24}
+            sm={24}
+            md={24}
+            lg={10}
+            xl={10}
+            className="d-flex text-align-left align-items-end"
+          >
+            <div
+              className={`${width >= 992 && "pl-200"} section-home__product`}
+            >
+              <h1>What we do</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
+                fuga mollitia voluptates, dolorem sint sapiente doloremque
+                tempora dolores cupiditate doloribus voluptatum aliquid corporis
+                fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Aliquam, perferendis iure? Obcaecati inventore deserunt
+                sequi fuga mollitia voluptates, dolorem sint sapiente doloremque
+                tempora dolores cupiditate doloribus voluptatum aliquid corporis
+                fugiat.
+              </p>
+              <CustomButtonSecondary title={"Learn more"} />
+            </div>
           </Col>
         </Row>
 
@@ -153,6 +189,7 @@ const Home = () => {
                     <ProductsCard
                       key={item.key}
                       title={item.title}
+                      subtitle={item.subtitle}
                       description={item.description}
                       image={item.image}
                     />
@@ -163,47 +200,37 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className="ptb-100">
-          <Col style={{ width: "100%" }}>
-            <HorizontalScollingMenu
-              titleHeader={"International Distributors"}
-              separatorItem={"international-disrtubutors--separator"}
-              renderItem={() => {
-                return mockdb().MockInternationalDistributorsCard.map(
-                  (item) => {
-                    return (
-                      <div
-                        style={{
-                          height: "100%",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <img
-                          src={item.image}
-                          style={{ width: 150, height: 100 }}
-                        />
-                      </div>
-                    );
-                  }
-                );
-              }}
-            />
-          </Col>
-        </Row>
-
         <div className="ptb-100">
           <Row>
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-              <h1 style={width >= 992 ? { fontSize: 50 } : { fontSize: 30 }}>
-                Bdiscom Srl
+              <h1
+                style={
+                  width >= 992
+                    ? { fontSize: 50, color: "var(--color-primary)" }
+                    : { fontSize: 30, color: "var(--color-primary)" }
+                }
+              >
+                Wide spectrum of services,
               </h1>
-              <h1 style={width >= 992 ? { fontSize: 50 } : { fontSize: 30 }}>
-                key supplier for plasma generators
+              <h1
+                style={
+                  width >= 992
+                    ? { fontSize: 50, color: "var(--color-primary)" }
+                    : { fontSize: 30, color: "var(--color-primary)" }
+                }
+              >
+                delivered with the expertise of our team
               </h1>
             </Col>
             <Col xs={24} sm={24} md={24} lg={10} xl={10}>
               <div className="section-home__name">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
+                  fuga mollitia voluptates, dolorem sint sapiente doloremque
+                  tempora dolores cupiditate doloribus voluptatum aliquid
+                  corporis fugiat.
+                </p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
@@ -225,7 +252,7 @@ const Home = () => {
 
           <Row gutter={[12, 12]} className="mt-50">
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-              <Image src={HEA01} height={"95%"} preview={false} />
+              <Image src={HEA03} height={"95%"} preview={false} />
             </Col>
             <Col
               xs={24}
@@ -235,7 +262,7 @@ const Home = () => {
               xl={6}
               className="d-flex align-items-end"
             >
-              <Image src={HEA01} height={300} preview={false} />
+              <Image src={HEA03} height={300} preview={false} />
             </Col>
             <Col
               xs={24}
@@ -245,38 +272,10 @@ const Home = () => {
               xl={6}
               className="d-flex align-items-center"
             >
-              <Image src={HEA01} height={300} preview={false} />
+              <Image src={HEA03} height={300} preview={false} />
             </Col>
           </Row>
         </div>
-
-        <Row className="ptb-100" gutter={[0, 24]}>
-          <Col span={14} xs={24} sm={24} md={24} lg={14} xl={14}>
-            <Image src={HEA01} height={"100%"} preview={false} />
-          </Col>
-          <Col
-            xs={24}
-            sm={24}
-            md={24}
-            lg={10}
-            xl={10}
-            className="d-flex text-align-left align-items-end"
-          >
-            <div
-              className={`${width >= 992 && "pl-200"} section-home__product`}
-            >
-              <h1>Title</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aliquam, perferendis iure? Obcaecati inventore deserunt sequi
-                fuga mollitia voluptates, dolorem sint sapiente doloremque
-                tempora dolores cupiditate doloribus voluptatum aliquid corporis
-                fugiat.
-              </p>
-              <CustomButtonSecondary title={"Learn more"} />
-            </div>
-          </Col>
-        </Row>
 
         <Row className="ptb-100">
           <Col
@@ -316,6 +315,37 @@ const Home = () => {
                 );
               })}
             </Row>
+          </Col>
+        </Row>
+
+        <Row className="ptb-100">
+          <Col style={{ width: "100%" }}>
+            <HorizontalScollingMenu
+              titleHeader={"International Distributors"}
+              separatorItem={"international-disrtubutors--separator"}
+              renderItem={() => {
+                return mockdb().MockInternationalDistributorsCard.map(
+                  (item) => {
+                    return (
+                      <div
+                        key={item.key}
+                        style={{
+                          height: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <img
+                          src={item.image}
+                          style={{ width: 150, height: 100, cursor: "pointer" }}
+                          onClick={() => window.open(item.link, "_blank")}
+                        />
+                      </div>
+                    );
+                  }
+                );
+              }}
+            />
           </Col>
         </Row>
       </div>

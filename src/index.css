@@ -63,6 +63,29 @@
   src: url("./resources/font/Fontspring-DEMO-3-mundial-light-tty.otf");
 }
 
+/*** Raleway ***/
+
+@font-face {
+  font-family: Raleway-Black;
+  src: url("./resources/font/Raleway-Black.ttf");
+}
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("./resources/font/Raleway-Bold.ttf");
+}
+@font-face {
+  font-family: Raleway-Medium;
+  src: url("./resources/font/Raleway-Medium.ttf");
+}
+@font-face {
+  font-family: Raleway-Regular;
+  src: url("./resources/font/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: Raleway-Light;
+  src: url("./resources/font/Raleway-Light.ttf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -75,15 +98,26 @@ body {
 
 /** BASICS **/
 
-h1,
+h1 {
+  font-family: Raleway-Bold;
+  font-size: 40px !important;
+}
+
 h2 {
-  font-family: Mundial-Bold;
-  font-size: 1.2em;
+  font-family: Raleway-Bold;
+  font-size: 30px !important;
+}
+
+p,
+span,
+pre {
+  font-family: Raleway-Light;
+  font-size: 20px !important;
 }
 
 h3,
 h4 {
-  font-family: Mundial-Medium;
+  font-family: Raleway-Medium;
   font-size: 1.2em;
 }
 
@@ -91,7 +125,7 @@ p,
 pre,
 span,
 div {
-  font-family: Mundial-Light;
+  font-family: Raleway-Light;
   font-size: 18px;
 }
 

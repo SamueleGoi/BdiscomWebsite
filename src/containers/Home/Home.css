@@ -45,10 +45,10 @@
   color: var(--color-light);
 }
 
-.hero-text__desktop .hero-text__first-title,
-.hero-text__desktop .hero-text__second-title {
+.hero-text__desktop .hero-text__first-title h1,
+.hero-text__desktop .hero-text__second-title h1 {
   text-transform: uppercase;
-  font-size: 4em;
+  font-size: 4em !important;
 }
 
 .hero-text__desktop .hero-text__first-title {
@@ -103,12 +103,13 @@
 }
 
 .first-section__column h1 {
-  font-size: 3em;
+  font-size: 40px !important;
+  color: var(--color-primary);
 }
 
 .first-section__column p {
   margin: 1em;
-  font-size: 1.7em;
+  font-size: 25px;
 }
 
 @media screen and (max-width: 992px) {
@@ -124,24 +125,26 @@
 /** section about **/
 
 .section-home__about h1 {
-  font-size: 2em !important;
+  font-size: 40px !important;
   padding-bottom: 0.5em;
+  color: var(--color-primary);
 }
 
 .section-home__about p {
-  font-size: 1em !important;
+  font-size: 20px !important;
   padding-bottom: 2em;
 }
 
 /** section product **/
 
 .section-home__product h1 {
-  font-size: 2em !important;
+  font-size: 40px !important;
   padding-bottom: 0.5em;
+  color: var(--color-primary);
 }
 
 .section-home__product p {
-  font-size: 1em !important;
+  font-size: 20px !important;
   padding-bottom: 2em;
 }
 

@@ -34,7 +34,8 @@
 }
 
 .button-login span {
-  font-family: Mundial-Bold !important;
+  font-family: Raleway-Bold !important;
+  font-size: 20px !important;
 }
 
 /** Secondary **/
@@ -51,7 +52,7 @@
 }
 
 .ant-btn-secondary span {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.16em;
