@@ -124,7 +124,8 @@ h4 {
 p,
 pre,
 span,
-div {
+div,
+a {
   font-family: Raleway-Light;
   font-size: 18px;
 }
