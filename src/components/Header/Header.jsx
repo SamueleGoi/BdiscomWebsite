@@ -45,11 +45,13 @@ const Header = () => {
   };
 
   const clickToNavigate = (element) => {
-    switch (element.key) {
+    switch (element) {
       case "Who we are":
         return navigate("/about");
       case "Login":
         return navigate("/account/login");
+      case "Products":
+        return navigate("/product");
       default:
         break;
     }
@@ -78,7 +80,7 @@ const Header = () => {
             </CustomButtonLogin>
           )
         : element,
-    onClick: (element) => clickToNavigate(element),
+    onClick: () => clickToNavigate(element),
     className: element === "Login" && "menu-login menu-login--transparent",
   }));
 

@@ -7,12 +7,17 @@ import { Image } from "antd";
 import "./HeaderDesktopMenu.css";
 
 const HeaderDesktopMenu = (props) => {
+  // ${
+  //   props.headerActive || props.location.pathname !== "/"
+  //     ? "header__desktop--active"
+  //     : "header__desktop--not-active"
+  // }
   return (
     <>
       <header
         style={{ padding: props.switchPaddingMenu(props.width) }}
         className={`header__desktop ${
-          props.headerActive || props.location.pathname !== "/"
+          props.headerActive
             ? "header__desktop--active"
             : "header__desktop--not-active"
         }`}
@@ -24,7 +29,7 @@ const HeaderDesktopMenu = (props) => {
                 <Image
                   style={{ cursor: "pointer" }}
                   src={
-                    props.headerActive || props.location.pathname !== "/"
+                    props.headerActive
                       ? props.LogoBdiscomPrimary
                       : props.LogoBdiscomWhite
                   }

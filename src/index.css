@@ -223,6 +223,10 @@ a {
   justify-content: end;
 }
 
+.justify-content-start {
+  justify-content: start;
+}
+
 .justify-content-space-between {
   justify-content: space-between;
 }

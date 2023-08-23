@@ -17,89 +17,19 @@ import HorizontalScollingMenu from "../../components/HorizontalScollingMenu/Hori
 import { mockdb } from "../../utils/mockdb";
 
 // image header
-import HEA01 from "../../resources/images/Header/HEA01.jpg";
-import HEA02 from "../../resources/images/Header/HEA02.jpg";
 import HEA03 from "../../resources/images/Header/HEA03.jpg";
-import HEA04 from "../../resources/images/Header/HEA04.jpg";
-import HEA05 from "../../resources/images/Header/HEA05.jpg";
 
 // css
 import "./Home.css";
 
 const Home = () => {
-  const [firstIconButtonOver, setFirstIconButtonOver] = useState(false);
-  const [secondIconButtonOver, setSecondIconButtonOver] = useState(false);
-  const [changePage, setChangePage] = useState(1);
-
-  const { width, height } = useWindowDimensions();
-
-  const page = (width) => {
-    let numPagination;
-    let countPageSize = 1;
-
-    if (width < 576) {
-      numPagination = 1 * countPageSize;
-    }
-    if (width >= 576) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 768) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 992) {
-      numPagination = 3 * countPageSize;
-    }
-    if (width >= 1200) {
-      numPagination = 4 * countPageSize;
-    }
-    if (width >= 1600) {
-      numPagination = 6 * countPageSize;
-    }
-    return numPagination;
-  };
-
-  const paginationProducts = (width) => {
-    let numPagination;
-    let countPageSize = 1;
-
-    if (width < 576) {
-      numPagination = 1 * countPageSize;
-    }
-    if (width >= 576) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 768) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 992) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 1200) {
-      numPagination = 2 * countPageSize;
-    }
-    if (width >= 1600) {
-      numPagination = 3 * countPageSize;
-    }
-    return { numPagination };
-  };
+  const { width } = useWindowDimensions();
 
   //   const navigate = useNavigate();
   return (
     <>
-      <div className="hero-image">
-        <div
-          className={width >= 992 ? "hero-text__desktop" : "hero-text__mobile"}
-        >
-          <div className="hero-text__first-title">
-            <h1>We power</h1>
-          </div>
-          <div className="hero-text__second-title">
-            <h1>the future</h1>
-          </div>
-        </div>
-      </div>
-
-      <div className={`${width >= 992 ? "plr-100" : "plr-10"}`}>
+      {/* <HeroImage /> */}
+      <div>
         <Row
           className={`${width >= 992 && "plr-100"} ptb-100 first-section_row`}
         >

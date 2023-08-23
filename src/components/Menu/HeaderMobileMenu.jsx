@@ -11,12 +11,17 @@ import User from "../../resources/svg-components/User";
 import "./HeaderMobileMenu.css";
 
 const HeaderMobileMenu = (props) => {
+  // ${
+  //   props.headerActive || props.location.pathname !== "/"
+  //     ? "header__mobile--active"
+  //     : "header__mobile--not-active"
+  // }
   return (
     <>
       {!props.openMenuMobile && (
         <header
-          className={`header__mobile ${
-            props.headerActive || props.location.pathname !== "/"
+          className={`header__mobile  ${
+            props.headerActive
               ? "header__mobile--active"
               : "header__mobile--not-active"
           }`}
@@ -42,7 +47,7 @@ const HeaderMobileMenu = (props) => {
                 <span className="logo">
                   <Image
                     src={
-                      props.headerActive || props.location.pathname !== "/"
+                      props.headerActive
                         ? props.LogoBdiscomPrimary
                         : props.LogoBdiscomWhite
                     }

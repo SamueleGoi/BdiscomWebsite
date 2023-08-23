@@ -75,41 +75,41 @@ export const mockdb = () => {
         title: "BDS.AMN",
         description:
           "BDISCOM is introducing a new generation of automatic matching network units operating at the standard ISM frequency of 13.56 MHz intended for industrial and laboratory use. Typical application include Sputtering process, PECVD deposition, plasma activation, dielectric heating, laser excitation and more.",
-        key: "4",
+        key: "3",
       },
       {
         image: WWD01,
         title: "BDS.SP",
         description:
           "Very price competitive  Table Top RF  13.56 MHz plasma reactor system series for most of the Cleaning/Etching process in R/D or small Industrial pilot  production (from 2.5 to 40 litres SS 304 vacuum chambers)",
-        key: "5",
+        key: "4",
       },
       {
         image: WWD01,
         title: "BDS.HV",
         description:
           "The BDS VIMM - Variable Inductor Manual Matching Unit - is the most compact RF 13.56 MHz inductive manual matching network currently available on the market with some unique features described in the below specifications.",
-        key: "6",
+        key: "5",
       },
       {
         image: WWD01,
         title: "Spare",
         description:
           "New high voltage DC generator with AFP (touch screen Active Front Panel) for glow discharge processes",
-        key: "7",
+        key: "6",
       },
       {
         image: WWD01,
         title: "Spare",
         description:
           "Highly price competitive DC power supply with fast arc detection (< 200 nSec ) and digital interfaces. Suitable for small and medium R/D and industrial sputter tools.",
-        key: "8",
+        key: "7",
       },
       {
         image: WWD01,
         title: "Spare",
         description: "BDS SP 3, 6 and 12 Sputter Power Supplies",
-        key: "9",
+        key: "8",
       },
     ],
     MockInternationalDistributorsCard: [
