@@ -22,7 +22,6 @@
 }
 
 .first-section__column h1 {
-  font-size: 40px !important;
   color: var(--color-primary);
 }
 
@@ -44,41 +43,31 @@
 /** section about **/
 
 .section-home__about h1 {
-  font-size: 40px !important;
   padding-bottom: 0.5em;
   color: var(--color-primary);
 }
 
 .section-home__about p {
-  font-size: 20px !important;
   padding-bottom: 2em;
 }
 
 /** section product **/
 
 .section-home__product h1 {
-  font-size: 40px !important;
   padding-bottom: 0.5em;
   color: var(--color-primary);
 }
 
 .section-home__product p {
-  font-size: 20px !important;
   padding-bottom: 2em;
 }
 
 /** section name **/
-.section-home__name {
-  /* padding-left: 200px; */
-}
 
 .section-home__name h1 {
-  font-size: 2em !important;
   padding-bottom: 0.5em;
 }
 
 .section-home__name p {
-  font-family: Mundial-Light;
-  font-size: 1em;
   padding-bottom: 2em;
 }

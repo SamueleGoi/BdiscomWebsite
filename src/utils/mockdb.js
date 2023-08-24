@@ -33,16 +33,14 @@ export const mockdb = () => {
       {
         image: GENCOA,
         title: "Gencoa",
-        description:
-          "Gencoa provide sputter based solutions for the vacuum thin film deposition industry",
+        description: "Gencoa provide sputter based solutions for the vacuum thin film deposition industry",
         link: "http://www.gencoa.com/",
         key: "1",
       },
       {
         image: MANITOU_REP,
         title: "MANITOU SYSTEMS Inc",
-        description:
-          "Azienda americana specializzata in accessori e dispositivi speciali per generatori e applicazioni 'Plasma Radio Frequenza'",
+        description: "Azienda americana specializzata in accessori e dispositivi speciali per generatori e applicazioni 'Plasma Radio Frequenza'",
         link: "http://www.manitousys.com/",
         key: "2",
       },
@@ -52,8 +50,7 @@ export const mockdb = () => {
         image: WWD01,
         title: "BDS.ARC",
         subtitle: "Arc Plasma Generator",
-        description:
-          "The most reliable high performance generator for high current CAE processes with high efficiency (> 90 %)",
+        description: "The most reliable high performance generator for high current CAE processes with high efficiency (> 90 %)",
         key: "0",
       },
       {
@@ -66,8 +63,7 @@ export const mockdb = () => {
       {
         image: WWD01,
         title: "BDS.HF",
-        description:
-          "New generation of very price competitive and High efficiency 200, 300 and 750 Watt 13.56 MHz Black Box RF generators",
+        description: "New generation of very price competitive and High efficiency 200, 300 and 750 Watt 13.56 MHz Black Box RF generators",
         key: "2",
       },
       {
@@ -94,8 +90,7 @@ export const mockdb = () => {
       {
         image: WWD01,
         title: "Spare",
-        description:
-          "New high voltage DC generator with AFP (touch screen Active Front Panel) for glow discharge processes",
+        description: "New high voltage DC generator with AFP (touch screen Active Front Panel) for glow discharge processes",
         key: "6",
       },
       {

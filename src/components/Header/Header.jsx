@@ -47,7 +47,7 @@ const Header = () => {
   const clickToNavigate = (element) => {
     switch (element) {
       case "Who we are":
-        return navigate("/about");
+        return navigate("/who-we-are");
       case "Login":
         return navigate("/account/login");
       case "Products":
@@ -57,25 +57,13 @@ const Header = () => {
     }
   };
 
-  const itemMenu = [
-    "Who we are",
-    "What we do",
-    "Products",
-    "Work with us",
-    "Contacts",
-    "Login",
-  ].map((element) => ({
+  const itemMenu = ["Who we are", "What we do", "Products", "Work with us", "Contacts", "Login"].map((element) => ({
     key: element,
     // icon: element === "Products" && <AngleSmallDown color="#2d56a0" />,
     label:
       element === "Login"
         ? width >= 992 && (
-            <CustomButtonLogin
-              type="ghost"
-              className={`button-login ${
-                headerActive && "button-login--active"
-              }`}
-            >
+            <CustomButtonLogin type="ghost" className={`button-login ${headerActive && "button-login--active"}`}>
               {element}
             </CustomButtonLogin>
           )

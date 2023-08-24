@@ -23,18 +23,22 @@
   font-family: GT-America-Black;
   src: url("./resources/font/GT-America-Compressed-Black-Trial.otf");
 }
+
 @font-face {
   font-family: GT-America-Bold;
   src: url("./resources/font/GT-America-Compressed-Bold-Trial.otf");
 }
+
 @font-face {
   font-family: GT-America-Medium;
   src: url("./resources/font/GT-America-Compressed-Medium-Trial.otf");
 }
+
 @font-face {
   font-family: GT-America-Regular;
   src: url("./resources/font/GT-America-Compressed-Regular-Trial.otf");
 }
+
 @font-face {
   font-family: GT-America-Light;
   src: url("./resources/font/GT-America-Compressed-Light-Trial.otf");
@@ -46,18 +50,22 @@
   font-family: Mundial-Black;
   src: url("./resources/font/Fontspring-DEMO-7-mundial-black-tty.otf");
 }
+
 @font-face {
   font-family: Mundial-Bold;
   src: url("./resources/font/Fontspring-DEMO-6-mundial-bold-tty.otf");
 }
+
 @font-face {
   font-family: Mundial-Medium;
   src: url("./resources/font/Fontspring-DEMO-5-mundial-demibold-tty.otf");
 }
+
 @font-face {
   font-family: Mundial-Regular;
   src: url("./resources/font/Fontspring-DEMO-4-mundial-regular-tty.otf");
 }
+
 @font-face {
   font-family: Mundial-Light;
   src: url("./resources/font/Fontspring-DEMO-3-mundial-light-tty.otf");
@@ -69,18 +77,22 @@
   font-family: Raleway-Black;
   src: url("./resources/font/Raleway-Black.ttf");
 }
+
 @font-face {
   font-family: Raleway-Bold;
   src: url("./resources/font/Raleway-Bold.ttf");
 }
+
 @font-face {
   font-family: Raleway-Medium;
   src: url("./resources/font/Raleway-Medium.ttf");
 }
+
 @font-face {
   font-family: Raleway-Regular;
   src: url("./resources/font/Raleway-Regular.ttf");
 }
+
 @font-face {
   font-family: Raleway-Light;
   src: url("./resources/font/Raleway-Light.ttf");
@@ -100,34 +112,125 @@ body {
 
 h1 {
   font-family: Raleway-Bold;
-  font-size: 40px !important;
 }
 
 h2 {
   font-family: Raleway-Bold;
-  font-size: 30px !important;
-}
-
-p,
-span,
-pre {
-  font-family: Raleway-Light;
-  font-size: 20px !important;
 }
 
 h3,
-h4 {
-  font-family: Raleway-Medium;
-  font-size: 1.2em;
-}
-
+h4,
 p,
-pre,
 span,
+pre,
 div,
 a {
   font-family: Raleway-Light;
-  font-size: 18px;
+}
+
+@media only screen and (min-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  h3,
+  h4,
+  p,
+  span,
+  pre,
+  div,
+  a {
+    font-size: 15px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* default iPad screens */
+  h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3,
+  h4,
+  p,
+  span,
+  pre,
+  div,
+  a {
+    font-size: 18px !important;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* styles for browsers larger than 960px; */
+  h1 {
+    font-size: 30px !important;
+  }
+
+  h2 {
+    font-size: 25px !important;
+  }
+
+  h3,
+  h4,
+  p,
+  span,
+  pre,
+  div,
+  a {
+    font-size: 20px !important;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  /* styles for browsers larger than 1440px; */
+  h1 {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3,
+  h4,
+  p,
+  span,
+  pre,
+  div,
+  a {
+    font-size: 20px !important;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  /* for sumo sized (mac) screens */
+  h1 {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3,
+  h4,
+  p,
+  span,
+  pre,
+  div,
+  a {
+    font-size: 20px !important;
+  }
 }
 
 /** PADDING OR MARGIN **/

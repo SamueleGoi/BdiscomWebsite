@@ -1,0 +1,8 @@
+.section__product h1 {
+  padding-bottom: 0.5em;
+  color: var(--color-primary);
+}
+
+.section__product p {
+  padding-bottom: 2em;
+}

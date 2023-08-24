@@ -8,7 +8,7 @@ import Layout, { Content } from "antd/es/layout/layout";
 
 // pages
 import Home from "./containers/Home/Home";
-import About from "./containers/About/About";
+import WhoWeAre from "./containers/WhoWeAre/WhoWeAre";
 import Login from "./containers/Login/Login";
 import SignUp from "./containers/SignUp/SignUp";
 import Product from "./containers/Product/Product";
@@ -37,8 +37,9 @@ function App() {
           <div className={`${width >= 992 ? "plr-100" : "plr-10"}`}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/who-we-are" element={<WhoWeAre />} />
               <Route path="/product" element={<Product />} />
+              <Route path="/product/:id" element={<Product />} />
               <Route path="/account/login" element={<Login />} />
               <Route path="/account/register" element={<SignUp />} />
               <Route path="*" element={<ErrorPage404 />} />
