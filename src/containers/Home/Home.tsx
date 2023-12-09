@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 // hooks
 import useWindowDimensions from "../../hooks/useWindowDimensions";
@@ -22,15 +22,18 @@ import HEA03 from "../../resources/images/Header/HEA03.jpg";
 // css
 import "./Home.css";
 
-const Home = () => {
-  const { width } = useWindowDimensions();
+interface IHomeProps {}
 
-  const navigate = useNavigate();
+function Home(props: IHomeProps): JSX.Element {
+  const { width  } = useWindowDimensions();
+
+  const navigate:NavigateFunction = useNavigate();
+
   return (
     <>
       {/* <HeroImage /> */}
       <div>
-        <Row className={`${width >= 992 && "plr-100"} ptb-100 first-section_row`}>
+        <Row className={`${width && width >= 992 && "plr-100"} ptb-100 first-section_row`}>
           <Col span={24} className="first-section__column text-align-center">
             <h1>Bdiscom Srl key supplier for plasma generators</h1>
             <p>
@@ -42,7 +45,7 @@ const Home = () => {
 
         <Row className="ptb-100" gutter={[0, 24]}>
           <Col xs={24} sm={24} lg={10} xl={10} className="d-flex align-items-start">
-            <div className={`${width >= 992 && "pr-200"} section-home__about`}>
+            <div className={`${width && width >= 992 && "pr-200"} section-home__about`}>
               <h1>Who we are</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, perferendis iure? Obcaecati inventore deserunt sequi fuga mollitia
@@ -54,7 +57,7 @@ const Home = () => {
             </div>
           </Col>
           <Col xs={24} sm={24} lg={12} xl={12}>
-            <Image src={HEA03} height={width >= 992 ? 700 : "100%"} preview={false} />
+            <Image src={HEA03} height={width && width >= 992 ? 700 : "100%"} preview={false} />
           </Col>
         </Row>
 
@@ -63,7 +66,7 @@ const Home = () => {
             <Image src={HEA03} height={"100%"} preview={false} />
           </Col>
           <Col xs={24} sm={24} md={24} lg={10} xl={10} className="d-flex text-align-left align-items-end">
-            <div className={`${width >= 992 && "pl-200"} section-home__product`}>
+            <div className={`${width && width >= 992 && "pl-200"} section-home__product`}>
               <h1>What we do</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, perferendis iure? Obcaecati inventore deserunt sequi fuga mollitia
@@ -77,7 +80,7 @@ const Home = () => {
         </Row>
 
         <Row className="ptb-100">
-          <Col style={{ width: "100%" }}>
+          <Col style={{ width && width: "100%" }}>
             <HorizontalScollingMenu
               titleHeader={"Products"}
               renderItem={() => {
@@ -94,10 +97,10 @@ const Home = () => {
         <div className="ptb-100">
           <Row>
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-              <h1 style={width >= 992 ? { fontSize: 50, color: "var(--color-primary)" } : { fontSize: 30, color: "var(--color-primary)" }}>
+              <h1 style={width && width >= 992 ? { fontSize: 50, color: "var(--color-primary)" } : { fontSize: 30, color: "var(--color-primary)" }}>
                 Wide spectrum of services,
               </h1>
-              <h1 style={width >= 992 ? { fontSize: 50, color: "var(--color-primary)" } : { fontSize: 30, color: "var(--color-primary)" }}>
+              <h1 style={width && width >= 992 ? { fontSize: 50, color: "var(--color-primary)" } : { fontSize: 30, color: "var(--color-primary)" }}>
                 delivered with the expertise of our team
               </h1>
             </Col>
@@ -134,12 +137,12 @@ const Home = () => {
         </div>
 
         <Row className="ptb-100">
-          <Col className="d-flex justify-content-center width-100" xs={24} sm={24} md={24} lg={24} xl={24}>
+          <Col className="d-flex justify-content-center width && width-100" xs={24} sm={24} md={24} lg={24} xl={24}>
             <div style={{ textAlign: "center" }}>
               <h1 style={{ color: "var(--color-primary)", fontSize: "1.6em" }}>Representatives</h1>
             </div>
           </Col>
-          <Col className="mt-50 width-100">
+          <Col className="mt-50 width && width-100">
             <Row gutter={[0, 24]}>
               {mockdb().MockRepresentativesCard.map((item) => {
                 return (
@@ -153,7 +156,7 @@ const Home = () => {
         </Row>
 
         <Row className="ptb-100">
-          <Col style={{ width: "100%" }}>
+          <Col style={{ width && width: "100%" }}>
             <HorizontalScollingMenu
               titleHeader={"International Distributors"}
               separatorItem={"international-disrtubutors--separator"}
@@ -168,7 +171,7 @@ const Home = () => {
                         justifyContent: "center",
                       }}
                     >
-                      <img src={item.image} style={{ width: 150, height: 100, cursor: "pointer" }} onClick={() => window.open(item.link, "_blank")} />
+                      <img src={item.image} style={{ width && width: 150, height: 100, cursor: "pointer" }} onClick={() => window.open(item.link, "_blank")} />
                     </div>
                   );
                 });
@@ -179,6 +182,6 @@ const Home = () => {
       </div>
     </>
   );
-};
+}
 
 export default Home;

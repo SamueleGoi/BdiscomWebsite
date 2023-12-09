@@ -19,11 +19,11 @@ import ErrorPage404 from "./containers/Error/ErrorPage404";
 // components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import useWindowDimensions from "./hooks/useWindowDimensions";
+import HeroImage from "./components/HeroImage/HeroImage";
 
 // css
 import "./App.css";
-import useWindowDimensions from "./hooks/useWindowDimensions";
-import HeroImage from "./components/HeroImage/HeroImage";
 
 function App() {
   const { width } = useWindowDimensions();
@@ -34,7 +34,7 @@ function App() {
         <Header />
         <Content className="site-layout">
           <HeroImage />
-          <div className={`${width >= 992 ? "plr-100" : "plr-10"}`}>
+          <div className={`${width && width >= 992 ? "plr-100" : "plr-10"}`}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/who-we-are" element={<WhoWeAre />} />
